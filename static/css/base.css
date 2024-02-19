@@ -1,0 +1,115 @@
+html, body {
+    height: 100vh;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.h-100-calc {
+    height: calc(100vh - 180px);
+}
+
+.landing {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: url(../../media/background-home.jpeg) no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+@keyframes rainbow {
+    0% { border-color: violet; }
+    16.666% { border-color: indigo; }
+    33.333% { border-color: blue; }
+    50% { border-color: green; }
+    66.666% { border-color: yellow; }
+    83.333% { border-color: orange; }
+    100% { border-color: red; }
+}
+  
+.border-bottom-rainbow {
+    border-bottom: 4px solid transparent;
+    animation: rainbow 6s linear infinite; /* 6s for a complete cycle */
+}
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.logo-font {
+    text-transform: uppercase;
+}
+
+.main-logo-link {
+    width: fit-content;
+}
+
+.shop-now-button {
+    background: black;
+    color: white;
+    min-width: 260px;
+}
+
+.btn-black {
+    background: black;
+    color: white;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #222;
+    color: white;
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+.landing-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+
+.border-black {
+    border: 1px solid black !important;
+}
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
