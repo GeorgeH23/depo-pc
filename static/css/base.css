@@ -32,7 +32,7 @@ html, body {
 }
   
 .border-bottom-rainbow {
-    border-bottom: 4px solid transparent;
+    border-bottom: 1px solid transparent;
     animation: rainbow 6s linear infinite; /* 6s for a complete cycle */
 }
 
@@ -88,6 +88,10 @@ html, body {
 
 .border-black {
     border: 1px solid black !important;
+}
+
+.bg-black {
+    background: #000 !important;
 }
 
 /* -------------------------------- Media Queries */
