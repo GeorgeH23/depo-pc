@@ -1,0 +1,659 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "B07TXM7K4T",
+            "name": "Sceptre 30-inch Curved Gaming Monitor 21:9",
+            "description": "2560x1080 Ultra Wide/ Slim HDMI DisplayPort up to 200Hz Build-in Speakers, Metal Black (C305B-200UN1)",
+            "image": "https://m.media-amazon.com/images/I/71k6aHSHlIL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+            "stars": 4.5,
+            "price": 229.99,
+            "category": 1,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0B4SP5V43",
+            "name": "Acer CBA242Y A 23.8",
+            "description": "Full HD LED LCD Monitor - 16:9 - Black",
+            "image": "https://m.media-amazon.com/images/I/81WzQxlX0eL._AC_UL320_.jpg",
+            "stars": 3.9,
+            "price": 93.99,
+            "category": 1,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+            "sku": "B09GS97F5L",
+            "name": "Acer Nitro QG271 bipx 27",
+            "description": "Full HD (1920 x 1080) Gaming VA Monitor | AMD FreeSync Technology | 75Hz Refresh Rate | 1ms VRB | 1 x Display Port, 1 x HDMI 1.4 & 1 x VGA",
+            "image": "https://m.media-amazon.com/images/I/91ZFBH2C67L._AC_UL320_.jpg",
+            "stars": 5.0,
+            "price": 189.95,
+            "category": 1,
+            "isBestSeller": true
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+            "sku": "B09MZQG5H8",
+            "name": "Acer Nitro RG321QU Pbiipx 31.5",
+            "description": "Zero-Frame IPS WQHD 2560 x 1440 Gaming Monitor | AMD FreeSync Premium | Overclock to 170Hz | 1ms (VRB) | Ultra-Thin | 1 x Display Port 1.4 & 2 x HDMI 2.0",
+            "image": "https://m.media-amazon.com/images/I/81KN1+QeItL._AC_UL320_.jpg",
+            "stars": 5.0,
+            "price": 298.94,
+            "category": 1,
+            "isBestSeller": true
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+            "sku": "B088D8JG3L",
+            "name": "KYY Portable Monitor",
+            "description":"15.6inch 1080P FHD USB-C Laptop Monitor HDMI Computer Display HDR IPS Gaming Monitor w/Premium Smart Cover & Screen Protector, Speakers, for Laptop PC MAC Phone PS4 Xbox Switch",
+            "image": "https://m.media-amazon.com/images/I/81rsMys9S8L._AC_UL320_.jpg",
+            "stars": 4.5,
+            "price": 98.98,
+            "category": 1,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+            "sku": "B09KNVQDXS",
+            "name": "SAMSUNG S27R356FHN 27",
+            "description": "SAMSUNG IPS 1902X1080 75HZ HDMI (Renewed)",
+            "image": "https://m.media-amazon.com/images/I/91Vg-6MEI2L._AC_UL320_.jpg",
+            "stars": 4.5,
+            "price": 149.99,
+            "category": 1,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+            "sku": "B08QFGZ7PG",
+            "name": "SAMSUNG 32-inch Odyssey G7",
+            "description": "Make your gaming world, more lifelike than ever before. Packing in 1. 7 times the pixel density of Full HD, WQHD resolution boasts incredibly detailed, pin-sharp images. Experience a fuller view with more space to take in all the action",
+            "image": "https://m.media-amazon.com/images/I/81HgLa0WSHL._AC_UL320_.jpg",
+            "stars": 4.6,
+            "price": 169.99,
+            "category": 1,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+            "sku": "B093YJBXDQ",
+            "name": "ASUS TUF Gaming 27” 1080P Monitor (VG279QR)",
+            "description": "Full HD, IPS, 165Hz (Supports 144Hz)(Renewed)",
+            "image": "https://m.media-amazon.com/images/I/81Ypc7FloSL._AC_UL320_.jpg",
+            "stars": 4.5,
+            "price": 169.0,
+            "category": 1,
+            "isBestSeller": true
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0CG7JBS9B",
+            "name": "SAMSUNG 32-Inch",
+            "description": "ViewFinity S80PB Series UHD Monitor, DCI-P3 98%, VESA DisplayHDR 600, IPS Panel, Matte Display, USB-C, PIP/PBP, Intelligent Eye Care, LS32B806PXNXGO, 2023 (Renewed)",
+            "image": "https://m.media-amazon.com/images/I/81T4tteb2HL._AC_UL320_.jpg",
+            "stars": 4.5,
+            "price": 299.0,
+            "category": 1,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+            "sku": "B08YFMD84P",
+            "name": "SAMSUNG Business S80UA Series 27 Inch",
+            "description": "Viewfinity 4K UHD 3840x2160 Computer Monitor HDR10, DisplayPort, HDMI 2.0, USB 3.0 Hub, Headphone, 3-Yr WRNTY (S27A804NMN)",
+            "image": "https://m.media-amazon.com/images/I/91oc0RQK2jL._AC_UL320_.jpg",
+            "stars": 5.0,
+            "price": 359.99,
+            "category": 1,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+            "sku": "B09FRQWWBC",
+            "name": "Samsung Business S70A Series 32 Inch",
+            "description": "4K UHD 3840x2160 Computer Monitor, VA HDR10, Pivot Stand, DisplayPort, HDMI, Headphone (S32A704NWN) (Renewed)",
+            "image": "https://m.media-amazon.com/images/I/71mwOvdYorL._AC_UL320_.jpg",
+            "stars": 4.6,
+            "price": 327.99,
+            "category": 1,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+            "sku": "B071Y6SWGT",
+            "name": "Samsung Business UH850 Series 31.5",
+            "description": "4K QHD 3840x2160 QLED Desktop Monitor for Business, AMD FreeSync, DisplayPort, USB Hub, 3-Year Warranty (U32H850UMN)",
+            "image": "https://m.media-amazon.com/images/I/81agV6myM4L._AC_UL320_.jpg",
+            "stars": 4.5,
+            "price": 1097.99,
+            "category": 1,
+            "isBestSeller": true
+        }
+    },
+    {
+        "pk": 13,
+        "model": "products.product",
+        "fields": {
+            "sku": "B08ZNYTNH7",
+            "name": "LG 27GN880-B 27 Inch Ultragear",
+            "description": "Gaming Monitor QHD (2560 x 1440) Nano IPS 16:9 Display with Ergo Stand, 3-Side Virtually Borderless Design, HDR10, 144Hz Refresh Rate, and AMD FreeSync - Black",
+            "image": "https://m.media-amazon.com/images/I/617a47MWmxL._AC_UL320_.jpg",
+            "stars": 4.6,
+            "price": 499.99,
+            "category": 1,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 14,
+        "model": "products.product",
+        "fields": {
+            "sku": "B088LQL723",
+            "name": "Monoprice Zero-G Curved Gaming Monitor - 27 Inch",
+            "description": "Black, 1500R, QHD, 2560x1440p, 144Hz, 4ms GTG, DisplayHDR 400, AMD FreeSync, VA",
+            "image": "https://m.media-amazon.com/images/I/61gy2ibexxL._AC_UL320_.jpg",
+            "stars": 3.6,
+            "price": 299.99,
+            "category": 1,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 15,
+        "model": "products.product",
+        "fields": {
+            "sku": "BMSI MEG 342C QD OLED, 34",
+            "description": "Curved Gaming Monitor, 3440 x 1440 (UWQHD), OLED, 0.1ms, 175Hz, FreeSync Premium, HDR 400, HDMI, DP Port, USB Type C, Tilt, Height",
+            "image": "https://m.media-amazon.com/images/I/61vxXIs9gUL._AC_UL320_.jpg",
+            "stars": 5.0,
+            "price": 999.99,
+            "category": 1,
+            "isBestSeller": true
+        }
+    },
+    {
+        "pk": 16,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0C2VY1RBN",
+            "name": "LG 27",
+            "description": "Ultragear™ OLED QHD Gaming Monitor with 240Hz .03ms GtG & nVIDIA® G-SYNC® Compatible (Renewed)",
+            "image": "https://m.media-amazon.com/images/I/91fQy7Q0GvL._AC_UY218_.jpg",
+            "stars": 4.4,
+            "price": 699.99,
+            "category": 1,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 17,
+        "model": "products.product",
+        "fields": {
+            "sku": "B08X6QYPQ3",
+            "name": "LG 32GN550-B 32 Inch Ultragear",
+            "description": "VA Gaming Monitor with 165Hz Refresh Rate/FHD (1920 x 1080) with HDR10 / 1ms Response Time with MBR and Compatible with NVIDIA G-SYNC and AMD FreeSync Premium",
+            "image": "https://m.media-amazon.com/images/I/715CVUPPTNL._AC_UL320_.jpg",
+            "stars": 4.6,
+            "price": 499.99,
+            "category": 1,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 18,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0B89WLC4L",
+            "name": "LG 34WQ75C-B.AUS 34",
+            "description": "Curved UltraWide™ QHD IPS HDR 10 Built-in-KVM-Monitor with USB Type-C™ & LAN (RJ-45), Black",
+            "image": "https://m.media-amazon.com/images/I/61N5YMDBD0L._AC_UL320_.jpg",
+            "stars": 4.6,
+            "price": 494.94,
+            "category": 1,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 19,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0BVMB48PX",
+            "name": "LG 2023 Newest UltraWide WFHD 29 Inch",
+            "description": "Computer Monitor, 21:9 Curved UltraWide(2560x1080) Full HD IPS Display, 99% sRGB, HDR10, IPS with HDR 10 Compatibility, 75Hz Refresh Rate Bundle with Cefesfy",
+            "image": "https://m.media-amazon.com/images/I/71aFXPTWO8L._AC_UL320_.jpg",
+            "stars": 4.8,
+            "price": 369.99,
+            "category": 1,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 20,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0B197NV6Y",
+            "name": "LG 34WP88CN-B.AUS 34",
+            "description": "Curved UltraWide Ergo QHD IPS HDR Monitor with USB Type C",
+            "image": "https://m.media-amazon.com/images/I/71+7xPUtblL._AC_UL320_.jpg",
+            "stars": 4.1,
+            "price": 796.99,
+            "category": 1,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 21,
+        "model": "products.product",
+        "fields": {
+            "sku": "B07SH173T9",
+            "name": "Monoprice 35 Inch",
+            "description": "Zero-G Curved Ultrawide Gaming Monitor V2-1800R, 21:9, 3440x1440p, UWQHD, 120Hz, AMD FreeSync, 4ms, HDMI, DisplayPort, VA,Black",
+            "image": "https://m.media-amazon.com/images/I/61wyppq3JqL._AC_UL320_.jpg",
+            "stars": 4.6,
+            "price": 369.99,
+            "category": 1,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 22,
+        "model": "products.product",
+        "fields": {
+            "sku": "B08D6NVLDD",
+            "name": "LG 35'' Curved",
+            "description": "UltraWide QHD HDR Monitor with FreeSync",
+            "image": "https://m.media-amazon.com/images/I/51PEuM-s8XL._AC_UL320_.jpg",
+            "stars": 4.7,
+            "price": 449.99,
+            "category": 1,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 23,
+        "model": "products.product",
+        "fields": {
+            "sku": "B081846DX5",
+            "name": "Ematic 32\" 4K Gaming Monitor",
+            "description": "Ematic 32'' 4K HDR 3840x2160 HDMI DP USB 60hz 1ms LED Gaming Monitor (ECM4K320)",
+            "image": "https://m.media-amazon.com/images/I/71RWjRw0gCL._AC_UL320_.jpg",
+            "stars": 4.7,
+            "price": 159.99,
+            "category": 1,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 24,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0CDJCWNRN",
+            "name": "Microsoft Surface Laptop Go 3 (2023) - 12.4",
+            "description": "Touchscreen, Thin & Lightweight, Intel Core i5, 8GB RAM, 256GB SSD SSD, with Windows 11, Sandstone Color Copilot, Up to 15 hours [1] of battery life",
+            "image": "https://m.media-amazon.com/images/I/71xAs9YBPML._AC_SX679_.jpg",
+            "stars": 4.6,
+            "price": 698.49,
+            "category": 2,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 25,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0CKVD7VBR",
+            "name": "ASUS TUF Gaming A17 (2023) Gaming Laptop, 17.3",
+            "description": "FHD 144Hz Display, GeForce RTX 4050, AMD Ryzen 9 7940HS, 16GB DDR5, 1TB PCIe 4.0 SSD, Wi-Fi 6, Windows 11, FA707XU-EH94",
+            "image": "https://m.media-amazon.com/images/I/519tAJTfFXL._AC_SX450_.jpg",
+            "stars": 4.5,
+            "price": 1099.99,
+            "category": 2,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 26,
+        "model": "products.product",
+        "fields": {
+            "sku": "B09CV9MKYW",
+            "name": "ASUS ROG Strix G17 Gaming Laptop, 17.3",
+            "description": "300Hz IPS FHD, AMD Ryzen 9 5900HX Processor, NVIDIA GeForce RTX 3070 GPU, RGB Keyboard, W/Tikbot HDMI Cable(64GB RAM, 4TB PCIe SSD)",
+            "image": "https://m.media-amazon.com/images/I/61-9iJ6W3KS._AC_SX450_.jpg",
+            "stars": 5.0,
+            "price": 6999.00,
+            "category": 2,
+            "isBestSeller": true
+        }
+    },
+    {
+        "pk": 27,
+        "model": "products.product",
+        "fields": {
+            "sku": "B07YLDT931",
+            "name": "Dell Alienware Area 51M Laptop, 17.3",
+            "description": "FHD (1920 x 1080), 9th Gen Intel Core i7-9700K, 16GB (2x8GB) RAM, 256GB SSD + 1TB SSHD, NVIDIA GeForce RTX 2070, Windows 10 Home (Renewed)",
+            "image": "https://m.media-amazon.com/images/I/51W7Jgk7NHL._AC_SX450_.jpg",
+            "stars": 4.6,
+            "price": 3599.00,
+            "category": 2,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 28,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0BT6W36HL",
+            "name": "SAMSUNG 16 Galaxy Book3 Pro Business Laptop",
+            "description": "Computer/Windows 11 PRO / 32GB / 1TB, 13th Gen Intel® Core™ i7 processor, Intel® Evo™ platform, Lightweight, 2023 Model, NP964XFG-KC1US, Graphite",
+            "image": "https://m.media-amazon.com/images/I/71pozxyNy-L._AC_SX355_.jpg",
+            "stars": 4.0,
+            "price": 1399.99,
+            "category": 2,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 29,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0CCX11JT6",
+            "name": "SAMSUNG Galaxy Tab S9 FE Wi-Fi 10.9",
+            "description": "128GB Android Tablet, IP68 Water- and Dust-Resistant, Long Battery Life, Powerful Processor, S Pen, 8MP Camera, Lightweight Design, US Version, 2023, Gray",
+            "image": "https://m.media-amazon.com/images/I/41GcCeBaq5L._AC_SY355_.jpg",
+            "stars": 4.4,
+            "price": 379.99,
+            "category": 3,
+            "isBestSeller": true
+        }
+    },
+    {
+        "pk": 30,
+        "model": "products.product",
+        "fields": {
+            "sku": "B09NQMJ5XG",
+            "name": "SAMSUNG Galaxy Tab S8 11",
+            "description": "128GB WiFi 6E Android Tablet, PC Experience, Large LCD Screen, S Pen Included, Ultra Wide Camera, Expandable Memory, Long Lasting Battery, US Version, 2022, Graphite",
+            "image": "https://m.media-amazon.com/images/I/61Oxo8QjOrL._AC_SX355_.jpg",
+            "stars": 4.7,
+            "price": 597.96,
+            "category": 3,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 31,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0CNLVBFRK",
+            "name": "UMIDIGI A15 Tab Tablet, 2K Vivid 11 inch",
+            "description": "FHD+ Large Screen Android 13 Tablets 2023, 8GB+256GB 1TB Expand Octa-Core Gaming Tablet, 7500mAh, 4G LTE Dual SIM, 8+13MP Camera",
+            "image": "https://m.media-amazon.com/images/I/713yAxgrr4L._AC_SY355_.jpg",
+            "stars": 4.2,
+            "price": 199.99,
+            "category": 3,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 32,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0C4BB67Y8",
+            "name": "SAMSUNG Galaxy Tab S9+ Plus 12.4",
+            "description": "512GB , WiFi 6E Android Tablet, Snapdragon 8 Gen2 Processor, AMOLED Screen,S Pen, IP68 Rating, US Version,2023,Graphite",
+            "image": "https://m.media-amazon.com/images/I/71RXkwrLY4L._AC_SX355_.jpg",
+            "stars": 4.6,
+            "price": 969.99,
+            "category": 3,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 33,
+        "model": "products.product",
+        "fields": {
+            "sku": "B09WYYW4TR",
+            "name": "SAMSUNG Galaxy Tab S6 Lite 10.4",
+            "description": "128GB Android Tablet, LCD Screen, S Pen Included, Slim Metal Design, AKG Dual Speakers, 8MP Rear Camera, Long Lasting Battery, US Version, 2022, Angora Blue",
+            "image": "https://m.media-amazon.com/images/I/61EobGaoeaL._AC_SX355_.jpg",
+            "stars": 4.7,
+            "price": 278.00,
+            "category": 3,
+            "isBestSeller": true
+        }
+    },
+    {
+        "pk": 34,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0BZTG1HVT",
+            "name": "Zalman i3 NEO TG ATX Gaming PC Computer Case",
+            "description": "4 x 120mm Infinity Mirror ARGB Fans - ATX, mATX, Mini-ITX, Tempered Glass Front & Side Panel, Black",
+            "image": "https://m.media-amazon.com/images/I/51ssFjnt8wL._AC_SY355_.jpg",
+            "stars": 4.4,
+            "price": 79.99,
+            "category": 4,
+            "isBestSeller": true
+        }
+    },
+    {
+        "pk": 35,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0CCMLM717",
+            "name": "KEDIERS PC Case 4 PWM",
+            "description": "ARGB Cases Fans,E-ATX Mid Tower Gaming Computer Case with 2*Tempered Glass, USB3.0 * 2,Black,G900",
+            "image": "https://m.media-amazon.com/images/I/71oX0C219kL._AC_SX466_.jpg",
+            "stars": 4.1,
+            "price": 96.99,
+            "category": 4,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 36,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0CQM9BG5W",
+            "name": "KEDIERS White PC CASE ATX 5 PWM",
+            "description": "ARGB Fans Pre-Installed, USB 3.0 Mid Tower Computer Case with Full View Dual Tempered Glass, Gaming PC Case,G800",
+            "image": "https://m.media-amazon.com/images/I/71snbNSdSXL._AC_SY355_.jpg",
+            "stars": 4.2,
+            "price": 89.99,
+            "category": 4,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 37,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0BTRYDX4K",
+            "name": "Antec Performance 1 FT",
+            "description": "Full Tower, RTX40 Fully Compatible, Temp Display, 4 x Storm T3 PWM Fans, Type-C, Dual TG Side Panels, Removable Top Bracket, High Airflow Mesh Front Panel, E-ATX PC Gaming Case",
+            "image": "https://m.media-amazon.com/images/I/71iuyZ7iKjL._AC_SY355_.jpg",
+            "stars": 4.7,
+            "price": 149.99,
+            "category": 4,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 38,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0CFDVRWR3",
+            "name": "JONSBO D500 Black E-ATX/ATX Full Tower Computer Case",
+            "description": "10 Hard Disk Bit Expansion, Support 40 Series Long GPU/420 AIO, Al Alloy Shell in Fine Sandblasting,PSU Warehouse (UP/Down) Interchangeable,Black",
+            "image": "https://m.media-amazon.com/images/I/714AsO5lmeL._AC_SY355_.jpg",
+            "stars": 4.5,
+            "price": 388.00,
+            "category": 4,
+            "isBestSeller": true
+        }
+    },
+    {
+        "pk": 39,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0BHJJ9Y77",
+            "name": "SAMSUNG 990 PRO Series",
+            "description": "2TB PCIe Gen4. X4 NVMe 2.0c - M.2 Internal SSD (MZ-V9P2T0B/AM)",
+            "image": "https://m.media-amazon.com/images/I/71fFUd8uf3L._AC_SX355_.jpg",
+            "stars": 4.8,
+            "price": 162.99,
+            "category": 4,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 40,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0CL5KNB9M",
+            "name": "PlayStation 5 Digital Edition (slim)",
+            "description": "Includes DualSense Wireless Controller, 1TB SSD, 2 Horizontal Stand Feet, HDMI Cable, AC power cord, USB cable, printed materials, ASTRO’s PLAYROOM (Pre-installed game)",
+            "image": "https://m.media-amazon.com/images/I/21pybROD6BL._SY300_SX300_QL70_FMwebp_.jpg",
+            "stars": 4.7,
+            "price": 449.00,
+            "category": 5,
+            "isBestSeller": true
+        }
+    },
+    {
+        "pk": 41,
+        "model": "products.product",
+        "fields": {
+            "sku": "B08H75RTZ8",
+            "name": "Xbox Series X 1TB SSD Console",
+            "description": "Includes Wireless Controller - Up to 120 frames per second - 16GB RAM 1TB SSD - Experience True 4K Gaming Velocity Architecture",
+            "image": "https://m.media-amazon.com/images/I/51ojzJk77qL._SX342_.jpg",
+            "stars": 4.8,
+            "price": 444.99,
+            "category": 5,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 42,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0C7HKS2RF",
+            "name": "Microsoft Xbox Series S 1TB SSD Console Carbon Black",
+            "description": "Includes Xbox Wireless Controller - Up to 120 frames per second - 10GB RAM 1TB SSD - Experience high dynamic range - Xbox Velocity Architecture",
+            "image": "https://m.media-amazon.com/images/I/61hwaBMvOxL._SX342_.jpg",
+            "stars": 4.7,
+            "price": 331.19,
+            "category": 5,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 43,
+        "model": "products.product",
+        "fields": {
+            "sku": "B07K14XKZH",
+            "name": "Sony PlayStation 4 Pro 1TB Console",
+            "description": "4K gaming and entertainment, High dynamic range - With an HDR enabled TV, compatible PS4 games display an intensely vibrant range of colours, every PS4 game is playable on PS4 Pro at a minimum of 1080p",
+            "image": "https://m.media-amazon.com/images/I/51+AvgQs50L._SX466_.jpg",
+            "stars": 4.5,
+            "price": 349.95,
+            "category": 5,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 44,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0C7WNMCSC",
+            "name": "MARVEL’S SPIDER-MAN 2 – PS5 Launch Edition",
+            "description": "Experience two playable Spider-Men: Quickly swap between both Spider-Men as you explore an expanded Marvel’s New York. Experience Peter’s new symbiote abilities and Miles’ explosive bio-electric venom powers, and discover upgradeable, high-tech equipment that enhances the combat experience for extensive gameplay depth and variety",
+            "image": "https://m.media-amazon.com/images/I/81VGpLvXQuL._AC_SX522_.jpg",
+            "stars": 4.8,
+            "price": 69.99,
+            "category": 6,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 45,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0B9YR7FSJ",
+            "name": "Hogwarts Legacy - PlayStation 5 | English | EU Import Region Free",
+            "description": "Learn spells, brew potions, grow plants, and tend to magical beasts along your journey. Get sorted into your house, forge relationships, and master skills to become the witch or wizard you want to be",
+            "image": "https://m.media-amazon.com/images/I/711LbTnKy7L._SX342_.jpg",
+            "stars": 4.7,
+            "price": 39.29,
+            "category": 6,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 46,
+        "model": "products.product",
+        "fields": {
+            "sku": "B0CCT646YJ",
+            "name": "MOSISO Laptop Shoulder Bag, 15-15.6 inch ",
+            "description": "Computer Bag Compatible with MacBook Pro 16 inch, HP, Dell, Lenovo, Asus Notebook, Messenger Bag with Front Inverted Trapezoid Quilted Pocket & Belt, Black",
+            "image": "https://m.media-amazon.com/images/I/81EpwdbYcfL._AC_SY355_.jpg",
+            "stars": 4.8,
+            "price": 31.99,
+            "category": 7,
+            "isBestSeller": false
+        }
+    },
+    {
+        "pk": 47,
+        "model": "products.product",
+        "fields": {
+            "sku": "B098S48QWM",
+            "name": "VssoPlor Wireless Mouse, 2.4G Slim Portable Computer Mice",
+            "description": "Nano Receiver for Notebook, PC, Laptop, Computer (Black and Gold)",
+            "image": "https://m.media-amazon.com/images/I/51dsuumz6HL._AC_SY355_.jpg",
+            "stars": 4.7,
+            "price": 12.29,
+            "category": 7,
+            "isBestSeller": false
+        }
+    }
+]
