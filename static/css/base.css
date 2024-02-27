@@ -21,6 +21,16 @@ html, body {
     z-index: -1;
 }
 
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
+}
+
 @keyframes rainbow {
     0% { border-color: violet; }
     16.666% { border-color: indigo; }
