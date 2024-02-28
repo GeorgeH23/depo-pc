@@ -134,11 +134,11 @@ body {
 
 /* when the navbar collapse */
 @media (max-width: 991px) {
-    .container-fluid {
-        padding-top: 164px;
+    .header-container {
+        padding-top: 116px;
     }
 
     body {
-        height: calc(100vh - 164px);
+        height: calc(100vh - 116px);
     }
 }
