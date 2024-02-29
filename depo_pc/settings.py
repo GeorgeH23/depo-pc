@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['depo-pc.herokuapp.com', '8000-georgeh23-depo-pc-3jx0j27gj6.us2.codeanyapp.com', '127.0.0.1', 'localhost']
 
