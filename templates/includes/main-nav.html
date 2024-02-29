@@ -34,25 +34,25 @@
             </a>
             <div class="dropdown-menu border-0" 
                 aria-labelledby="categories-link">
-                <a href="" 
+                <a href="{% url 'products' %}?category=monitors" 
                     class="dropdown-item">Monitors
                 </a>
-                <a href="" 
+                <a href="{% url 'products' %}?category=laptops" 
                     class="dropdown-item">Laptops
                 </a>
-                <a href="" 
+                <a href="{% url 'products' %}?category=tablets" 
                     class="dropdown-item">Tablets
                 </a>
-                <a href="" 
+                <a href="{% url 'products' %}?category=components" 
                     class="dropdown-item">Components
                 </a>
-                <a href="" 
+                <a href="{% url 'products' %}?category=consoles" 
                     class="dropdown-item">Consoles
                 </a>
-                <a href="" 
+                <a href="{% url 'products' %}?category=games" 
                     class="dropdown-item">Games
                 </a>
-                <a href="" 
+                <a href="{% url 'products' %}?category=accessories" 
                     class="dropdown-item">Accessories
                 </a>
             </div>
@@ -64,16 +64,16 @@
                 aria-haspopup="true" aria-expanded="false">Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="offers-link">
-                <a href="" 
+                <a href="{% url 'products' %}?category=news" 
                     class="dropdown-item">News
                 </a>
-                <a href="" 
+                <a href="{% url 'products' %}?category=deals" 
                     class="dropdown-item">Deals
                 </a>
-                <a href="" 
+                <a href="{% url 'products' %}?category=clearance" 
                     class="dropdown-item">Clearance
                 </a>
-                <a href="" 
+                <a href="{% url 'products' %}?category=news,deals,clearance" 
                     class="dropdown-item">All Offers
                 </a>
             </div>
