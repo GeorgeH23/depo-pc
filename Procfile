@@ -1,1 +1,1 @@
-web: gunicorn depo-pc.wsgi:application
+web: gunicorn depo_pc.wsgi:application
