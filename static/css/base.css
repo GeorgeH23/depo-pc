@@ -140,6 +140,12 @@ a.category-badge>span.badge:hover {
     cursor: pointer;
 }
 
+.disabled-link {
+    color: gray; 
+    pointer-events: none; 
+    text-decoration: none; 
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
