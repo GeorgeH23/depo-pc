@@ -86,7 +86,7 @@
                                             </div>
                                         </form>
                                         {% if item.product.in_stock %}
-                                            <a class="update-link text-info" href="{% url 'adjust_cart' item.item_id %}"><small>Update</small></a>
+                                            <a class="update-link text-info" href="{% url 'adjust_cart' item.item_id %}"><small></small></a>
                                         {% endif %}
                                         <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-size="{{ item.size }}"><small>Remove</small></a>
                                     </td>
@@ -151,10 +151,11 @@
 
 <script type="text/javascript">
     // Update quantity on click
-    $('.update-link').click(function(e) {
-        var form = $(this).prev('.update-form');
+    $('.update-link, .increment-qty, .decrement-qty').click(function(e) {
+        e.preventDefault();
+        var form = $(this).closest('.update-form');
         form.submit();
-    })
+    });
 
     // Remove item and reload on click
     $('.remove-item').click(function(e) {

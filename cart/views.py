@@ -55,8 +55,9 @@ def adjust_cart(request, item_id):
     if 'in_stock' in request.POST:
         stock = request.POST['in_stock']
 
-    if not quantity_str or not quantity_str.isdigit():
+    if quantity_str is None or not quantity_str.isdigit():
         messages.error(request, 'Invalid quantity.')
+        return redirect(reverse('view_cart'))
 
     quantity = int(quantity_str)
 
@@ -64,15 +65,16 @@ def adjust_cart(request, item_id):
 
     if stock:
         if quantity > 0:
-                cart[item_id]['items_stock'][stock] = quantity
+            cart[item_id]['items_stock'][stock] = quantity
         else:
             del cart[item_id]['items_stock'][stock]
     else:
         if quantity > 0:
             cart[item_id] = quantity
         else:
-            cart.pop[item_id]
+            del cart[item_id]
 
     request.session['cart'] = cart
 
     return redirect(reverse('view_cart'))
+
