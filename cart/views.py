@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.http import JsonResponse
 from products.models import Product
 from django.contrib import messages
 
@@ -78,3 +79,24 @@ def adjust_cart(request, item_id):
 
     return redirect(reverse('view_cart'))
 
+
+def remove_cart(request, item_id):
+    stock = None
+
+    try:
+        if 'in_stock' in request.POST:
+            stock = request.POST['in_stock']
+        cart = request.session.get('cart', {})
+
+        if stock:
+            del cart[item_id]['items_stock'][stock]
+            if not cart[item_id]['items_stock']:
+                cart.pop(item_id)
+        else:
+            cart.pop(item_id)
+
+        request.session['cart'] = cart
+        return JsonResponse({'message': 'Item removed successfully'}, status=200)
+
+    except Exception as e:
+        return JsonResponse({'error': 'Error removing item'}, status=500)

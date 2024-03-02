@@ -88,7 +88,7 @@
                                         {% if item.product.in_stock %}
                                             <a class="update-link text-info" href="{% url 'adjust_cart' item.item_id %}"><small></small></a>
                                         {% endif %}
-                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-size="{{ item.size }}"><small>Remove</small></a>
+                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-stock="{{ item.stock }}"><small>Remove</small></a>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.product.price }}</p>
@@ -159,16 +159,23 @@
 
     // Remove item and reload on click
     $('.remove-item').click(function(e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('product_size');
-        var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+    e.preventDefault();
+    var csrfToken = "{{ csrf_token }}";
+    var itemId = $(this).attr('id').split('remove_')[1];  // Updated to get the item ID from the ID attribute
+    var stock = $(this).data('stock');  // Updated to get the stock from the data-stock attribute
+    var url = `/cart/remove/${itemId}/`;
+    var data = {'csrfmiddlewaretoken': csrfToken, 'in_stock': stock};  // Updated to use 'in_stock' key
 
-        $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
-    })
+    $.post(url, data)
+        .done(function(response) {
+            // Handle success, e.g., show a message to the user
+            console.log(response.message);
+            location.reload();
+        })
+        .fail(function() {
+            // Handle failure, e.g., show an error message
+            console.log('Error removing item');
+        });
+});
 </script>
 {% endblock %}
