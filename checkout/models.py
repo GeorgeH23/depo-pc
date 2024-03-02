@@ -53,10 +53,10 @@ class Order(models.Model):
 
         #Calculate delivery cost based on order total and free delivery
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
-            delivery_percentage = settings.STANDARD_DELIVERY_PERCENTAGE / 100
+            delivery_percentage = settings.STANDARD_DELIVERY_PERCENTAGE / Decimal('100.00')
             self.delivery_cost = self.order_total * delivery_percentage
         else:
-            self.delivery_cost = 0
+            self.delivery_cost = Decimal('0')
 
         # Apply discounts based on total sum order
         if self.order_total >= 1200:

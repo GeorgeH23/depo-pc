@@ -1,0 +1,25 @@
+Hello {{ order.full_name }}!
+
+This is a confirmation of your order at depo PC. Your order information is below:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Total: €{{ order.order_total|floatformat:2 }}
+Delivery: €{{ order.delivery_cost|floatformat:2 }}
+Grand Total: €{{ order.grand_total|floatformat:2 }}
+
+Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
+
+We've got your phone number on file as {{ order.phone_number }}.
+
+If you have any questions, feel free to contact us at {{ contact_email }},
+or through our website;
+https://depo-pc-1fa940aecc2f.herokuapp.com/
+
+
+Thank you for your order!
+
+Sincerely,
+
+depo PC
