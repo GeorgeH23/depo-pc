@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from products.models import Product
 from django.contrib import messages
 
@@ -46,3 +46,33 @@ def add_to_cart(request, item_id):
         messages.warning(request, 'This product is out of stock.')
 
     return redirect(redirect_url)
+
+
+def adjust_cart(request, item_id):
+    quantity_str = request.POST.get('quantity')
+    stock = None
+    
+    if 'in_stock' in request.POST:
+        stock = request.POST['in_stock']
+
+    if not quantity_str or not quantity_str.isdigit():
+        messages.error(request, 'Invalid quantity.')
+
+    quantity = int(quantity_str)
+
+    cart = request.session.get('cart', {})
+
+    if stock:
+        if quantity > 0:
+                cart[item_id]['items_stock'][stock] = quantity
+        else:
+            del cart[item_id]['items_stock'][stock]
+    else:
+        if quantity > 0:
+            cart[item_id] = quantity
+        else:
+            cart.pop[item_id]
+
+    request.session['cart'] = cart
+
+    return redirect(reverse('view_cart'))
