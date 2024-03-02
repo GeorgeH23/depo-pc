@@ -35,20 +35,25 @@
                                 </tr>
                             </thead>
 
-                            {% for item in bag_items %}
+                            {% for item in cart_items %}
                                 <tr>
                                     <td class="p-3 w-25">
                                         <img class="img-fluid rounded" src="{{ item.product.image }}">
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ item.product.name }}</p>
-                                        <p class="my-0">SKU: ${{ item.product.sku|upper }}</p>
+                                        <p class="my-0">{{ item.product.name }}</p>
+                                        {% if item.product.in_stock %}
+                                            <p class="my-0"><strong>Stock: Available</strong></p>
+                                        {% else %}
+                                            <p class="my-0"><strong>Stock: Out of Stock</strong></p>
+                                        {% endif %}
+                                        <p class="my-0"><strong>SKU:</strong> {{ item.product.sku|upper }}</p>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.product.price }}</p>
                                     </td>
                                     <td class="py-3 w-25">
-                                        <p class="my-0">${{ item.quantity }}</p>
+                                        <p class="my-0">{{ item.quantity }}</p>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.product.price }}</p>
