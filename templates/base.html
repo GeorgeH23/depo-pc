@@ -132,12 +132,20 @@
     </header>
 
     {% if messages %}
-        <div class="message-container">
-            <ul class="messages">
-                {% for message in messages %}
-                  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                {% endfor %}
-              </ul>
+        <div class="message-container" id="errorMessage">
+            {% for message in messages %}
+                {% with message.level as level %}
+                    {% if level == 40 %}
+                        {% include 'includes/toasts/toast_error.html' %}
+                    {% elif level == 30 %}
+                        {% include 'includes/toasts/toast_warning.html' %}
+                    {% elif level == 25 %}
+                        {% include 'includes/toasts/toast_success.html' %}
+                    {% else %}
+                        {% include 'includes/toasts/toast_info.html' %}
+                    {% endif %}
+                {% endwith %}
+            {% endfor %}
         </div>
     {% endif %}
 
@@ -252,6 +260,38 @@
                 currentUrl.searchParams.delete("direction");
 
                 window.location.replace(currentUrl);
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var errorMessageElement = document.getElementById("errorMessage");
+
+            if (errorMessageElement) {
+                var closeTimeout;
+
+                function closeErrorMessage() {
+                    errorMessageElement.style.display = "none";
+                }
+
+                function resetCloseTimer() {
+                    // Clear the previous timeout to prevent automatic close
+                    clearTimeout(closeTimeout);
+                    // Set a new timeout for 2 seconds
+                    closeTimeout = setTimeout(closeErrorMessage, 2000);
+                }
+
+                // Add event listeners for user interactions
+                errorMessageElement.addEventListener("click", resetCloseTimer);
+                errorMessageElement.addEventListener("mouseenter", function () {
+                    // Clear the timeout when the user hovers over the element
+                    clearTimeout(closeTimeout);
+                });
+                errorMessageElement.addEventListener("mouseleave", resetCloseTimer);
+
+                // Set the initial timeout for automatic close
+                resetCloseTimer();
             }
         });
     </script>

@@ -11,6 +11,7 @@ def view_cart(request):
 
 
 def add_to_cart(request, item_id):
+    product = get_object_or_404(Product, pk=item_id)
     quantity_str = request.POST.get('quantity')
     redirect_url = request.POST.get('redirect_url')
     stock = None
@@ -30,15 +31,22 @@ def add_to_cart(request, item_id):
         if item_id in list(cart.keys()):
             if stock in cart[item_id]['items_stock'].keys():
                 cart[item_id]['items_stock'][stock] += quantity
+                messages.success(request, f'Updated {product.name} quantity to {[cart[item_id]]}')
             else:
                 cart[item_id]['items_stock'][stock] = quantity
+                messages.success(request, f'Added {product.name} to your cart shop')
         else:
             cart[item_id] = {'items_stock': {stock: quantity}}
+            messages.success(request, f'Added {product.name} to your cart shop')
+
     else:
         if item_id in list(cart.keys()):
             cart[item_id] += quantity
+            messages.success(request, f'Updated {product.name} quantity to {[cart[item_id]]}')
+
         else:
             cart[item_id] = quantity
+            messages.success(request, f'Added {product.name} to your cart shop')
 
     request.session['cart'] = cart
 
@@ -50,6 +58,7 @@ def add_to_cart(request, item_id):
 
 
 def adjust_cart(request, item_id):
+    product = get_object_or_404(Product, pk=item_id)
     quantity_str = request.POST.get('quantity')
     stock = None
     
@@ -67,13 +76,17 @@ def adjust_cart(request, item_id):
     if stock:
         if quantity > 0:
             cart[item_id]['items_stock'][stock] = quantity
+            messages.success(request, f'Updated {product.name} quantity to {[cart[item_id]]}')
         else:
             del cart[item_id]['items_stock'][stock]
+            messages.success(request, f'Removed {product.name} from your cart shop')
     else:
         if quantity > 0:
             cart[item_id] = quantity
+            messages.success(request, f'Updated {product.name} quantity to {[cart[item_id]]}')
         else:
             del cart[item_id]
+            messages.success(request, f'Removed {product.name} from your card')
 
     request.session['cart'] = cart
 
@@ -84,6 +97,7 @@ def remove_cart(request, item_id):
     stock = None
 
     try:
+        product = get_object_or_404(Product, pk=item_id)
         if 'in_stock' in request.POST:
             stock = request.POST['in_stock']
         cart = request.session.get('cart', {})
@@ -92,11 +106,20 @@ def remove_cart(request, item_id):
             del cart[item_id]['items_stock'][stock]
             if not cart[item_id]['items_stock']:
                 cart.pop(item_id)
+            messages.success(request, f'Removed {product.name} from your cart shop')
         else:
             cart.pop(item_id)
+            messages.success(request, f'Removed {product.name} from your card')
 
         request.session['cart'] = cart
         return JsonResponse({'message': 'Item removed successfully'}, status=200)
 
     except Exception as e:
         return JsonResponse({'error': 'Error removing item'}, status=500)
+
+    #     request.session['cart'] = cart
+    #     return HttpResponse(status=200)
+
+    # except Exception as e:
+    #     messages.error(request, f'Error removing item: {e}')
+    #     return HttpResponse(status=500)
