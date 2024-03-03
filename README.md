@@ -4,7 +4,7 @@ Welcome to Depo PC: Your Ultimate Computer Hardware Haven!
 
 Depo PC is your one-stop destination for all things computer hardware. Dive into a world where cutting-edge technology meets seamless e-commerce, offering a curated selection of top-notch components, peripherals, and accessories. Our platform is designed to cater to tech enthusiasts, gamers, and professionals alike, providing a hassle-free shopping experience for all your computing needs.
 
-![Responsive website image](readme_assets/images/general/amiresponsive_cag.png)
+![Responsive website image](readme_assets/images/general/responsive.png)
 
 Visit the live site - [depo PC](https://depo-pc-1fa940aecc2f.herokuapp.com/ "Link to depo PC")
 
@@ -194,3 +194,337 @@ But we don't stop there. Our newsletter subscription, powered by MailChimp, keep
 
 ---
 
+## **Design**
+
+### **Color Scheme**
+
+### **Imagery**
+
+### **Structure**
+
+  - depo PC website is structured in a user-friendly and easy to navigate way.
+
+  - *Home page:*
+    - The homepage serves as the landing page for my application. A image was added on the background of the title. Was set it with css and Bootstrap. The button 'shop now' is a path to the products page.
+        ![Home Page](readme_assets/images/home.png)
+
+  - *Navbar*
+    - The navbar provides a navigation menu for users to easily access different sections of the application. It includes links to the homepage, user profile, products, categories, offers and other relevant pages. 
+
+  - *Footer:*
+    - The footer is located at the bottom of the page and contains 4 sections: the address, the social media, get to know us and information hub. It provides a consistent location for secondary navigation.
+        ![Footer and Navbar Page](readme_assets/images/nav-footer.png)
+
+  - *Registerig, logging in/out:*  
+    - First time/unregistered user can successfully make a purchase without registering.
+    - The login and registration pages contain a all auth form.
+        ![Login/Register/Logout Page](readme_assets/images/signin.png)
+
+  - *Product page*
+    - Includ all the categories, subcategories and sorting options. A list with all products from the shop are available here. In the left corner we can see how many products are in the list. On the right is a dropdown that give us the chance to sort the produc list. Multiple filters available.
+        ![Products Page](readme_assets/images/products.png)
+
+
+  - *Product detail page:*
+    - This page shows the details of a product. The image, the description and all the info that are related to the project.
+    - you can increase or decrease the quantity of a product and at it to the shopping cart.
+        ![Product Details Page](readme_assets/images/product_details.png)
+
+  - *Cart page*
+    - Consists in a list of the products that was added to the shopping cart.
+    - Some important details about the product can be seen.
+    - The price per each product.
+    - You are able to change the quantity, when press increase or decrease the subtotal automatically changes.
+    - A remove option is available if you want to delete the product from the cart.
+    - Go to checkout page when you want to pay.
+        ![Cart Shopping Page](readme_assets/images/cart.png)
+
+  - *Checkout page*
+    - Checkout page consists in a form and an order summary.
+    - Fill in the fields, pay, wait your order :).
+        ![Checkout Page](readme_assets/images/checkout.png)
+
+  - *Order Summary page*
+    - After the order is submited, a summary of the shopping cart is displayed.
+        ![Order Summary Page](readme_assets/images/order-summary.png)
+
+    - If the user login in the account, on his profile page is able to see the order history.
+        ![Order Summary Page](readme_assets/images/order-summary-login.png)
+
+  - *About, Contact pages*
+        ![About Page](readme_assets/images/about.png)
+        ![Contact Page](readme_assets/images/contact.png)
+
+  - *Error pages*
+    - Two error pages are supported, 404 (page not found) and 500 (internal server error), both with buttons that guide the user back to the home page. 
+
+  - *Policy and Terms Pages*
+
+### **Database Design**
+
+   - Order model:
+
+|Name|Database Key|Field Type|Validation|
+|---|---|---|---|
+|order_number|order_number|CharField|max_length=32, null=False, editable=False|
+|user_profile|user_profile|ForeignKey|'UserProfile', null=True, blank=True, on_delete=models.SET_NULL, related_name='orders'|
+|full_name|full_name|CharField|max_length=50, null=False, blank=False|
+|email|email|EmailField|max_length=254, null=False, blank=False|
+|phone_number|phone_number|CharField|max_length=20, null=False, blank=False|
+|country|country|CountryField|blank_label='Country *', null=False, blank=False|
+|postcode|postcode|CharField|max_length=20, null=True, blank=True|
+|town_or_city|town_or_city|CharField|max_length=40, null=False, blank=False|
+|street_address1|street_address1|CharField|max_length=80, null=False, blank=False|
+|street_address2|street_address2|CharField|max_length=80, null=True, blank=True|
+|county|county|CharField|max_length=80, null=True, blank=True|
+|date|date|DateTimeField|auto_now_add=True|
+|delivery_cost|delivery_cost|DecimalField|max_digits=6, decimal_places=2, null=False, default=0|
+|order_total|order_total|DecimalField|max_digits=10, decimal_places=2, null=False, default=0|
+|grand_total|grand_total|DecimalField|max_digits=10, decimal_places=2, null=False, default=0|
+|discount_applied|discount_applied|BooleanField|default=False|
+|original_cart|original_cart|TextField|null=False, blank=False, default=''|
+|stripe_pid|stripe_pid|CharField|max_length=254, null=False, blank=False, default=''|
+
+   - OrderLineItem model
+
+|Name|Database Key|Field Type|Validation|
+|---|---|---|---|
+|order|order|ForeignKey|'Order', null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems'|
+|painting|painting|ForeignKey|'Painting', null=False, blank=False, on_delete=models.CASCADE|
+|frame|frame|CharField|max_length=20, null=True, blank=True|
+|lineitem_total|lineitem_total|DecimalField|max_digits=6, decimal_places=2, null=False, blank=False, editable=False|
+
+   - Category model
+
+| Name          | Database Key  | Field Type    | Validation     |
+| ------------- | ------------- | ------------- | -------------- |
+| name          | name          | CharField     | max_length=254 |
+| friendly_name | friendly_name | CharField     | max_length=254, null=True, blank=True |
+
+   - Product model
+
+| Name        | Database Key  | Field Type        | Validation                |
+| ----------- | ------------- | ----------------- | ------------------------- |
+| category    | category      | ForeignKey        | 'Category', null=True, blank=True, on_delete=models.SET_NULL |
+| sku         | sku           | CharField         | max_length=254, null=True, blank=True |
+| name        | name          | CharField         | max_length=254            |
+| description | description   | TextField         |                           |
+| price       | price         | DecimalField      | max_digits=6, decimal_places=2 |
+| image       | image         | ImageField        | null=True, blank=True     |
+
+   - UserProfile model:
+
+| Name                   | Database Key            | Field Type        | Validation                  |
+| ---------------------- | ----------------------- | ----------------- | --------------------------- |
+| user                   | user                    | OneToOneField     | 'User', on_delete=models.CASCADE |
+| default_phone_number   | default_phone_number    | CharField         | max_length=20, null=True, blank=True |
+| default_street_address1| default_street_address1 | CharField         | max_length=80, null=True, blank=True |
+| default_street_address2| default_street_address2 | CharField         | max_length=80, null=True, blank=True |
+| default_town_or_city   | default_town_or_city    | CharField         | max_length=40, null=True, blank=True |
+| default_county         | default_county          | CharField         | max_length=80, null=True, blank=True |
+| default_postcode       | default_postcode        | CharField         | max_length=20, null=True, blank=True |
+| default_country        | default_country         | CountryField      | blank_label='Country', null=True, blank=True |
+
+   - Contact model
+
+| Name             | Database Key     | Field Type    | Validation                                 |
+| ---------------- | ---------------- | ------------- | ------------------------------------------ |
+| contact_reason   | contact_reason   | CharField     | max_length=24, choices=CONTACT_REASONS    |
+| name             | name             | CharField     | max_length=100                             |
+| email            | email            | EmailField    | max_length=100                             |
+| phone            | phone            | CharField     | max_length=20, blank=True, null=True       |
+| message          | message          | TextField     | max_length=1000                            |
+| date_submitted   | date_submitted   | DateTimeField | auto_now_add=True                         |
+
+
+
+## **Agile Project Management**
+
+- [depoPC Project Board](https://github.com/users/GeorgeH23/projects/4/views/1)
+
+<summary>User stories/tasks development</summary>
+
+**=== Epics ===**
+EPIC: Admin Functions epic must-have
+EPIC: Checkout Process epic must-have
+EPIC: Purch Process epic must-have
+EPIC: Search and Sort Products epic must-have
+EPIC: Products epic must-have
+EPIC: Home Page and Navigation epic should-have
+EPIC: Contact Page epic should-have
+EPIC: User Authentication epic should-have
+EPIC: Wishlist could-have epic
+
+**=== Stories ===**
+USER STORY: Delete Product By Admin must-have user story
+USER STORY: Edit/Update Product by Admin must-have user story
+USER STORY: Add Product by Admin must-have user story
+USER STORY: Checkout Page must-have user story
+USER STORY: Purch bag must-have user story
+USER STORY: Result summary must-have user story
+USER STORY: Multiple filters should-have user story
+USER STORY: Filter Searched Products must-have user story
+USER STORY: Sort Products must-have user story
+USER STORY: Total Price easy to see should-have user story
+USER STORY: Product Offers must-have user story
+USER STORY: Product details Page must-have user story
+USER STORY: Products page must-have user story
+USER STORY: Navigation Menu should-have user story
+USER STORY: Home Page should-have user story
+USER STORY: Create Contact Page should-have user story
+USER STORY: User Login Page should-have user story
+USER STORY: User Registration should-have user story
+USER STORY: Wishlist Page could-have user story
+USER STORY: Remove Products from the Wishlist could-have user story
+USER STORY: Add Products to the Wishlist could-have user story
+USER STORY: Order Confirmation could-have user story
+USER STORY: Project Set Up must-have user story
+
+---
+
+[Back to top ⇧](#depo-PC)
+
+---
+
+## **Features**
+
+All of the features presented in this sections are fully responsive on all devices and screen widths.
+Please refer to [TESTING.md](/TESTING.md) for more information about responsiveness testing.
+
+## **Future Implementations**
+
+The following features could be added to CAG in the future. Project deadline influenced heavily what was left out.
+
+  - Add Social sign-in options (Google, GitHub, Facebook)
+  - Add wishlist feature
+  - Add AI powered Recommendation
+  - Add interactiv Forul
+
+[Back to top ⇧](#depo-PC)
+
+---
+
+## **Technologies Used**
+
+### **Languages Used**
+
+- [HTML](https://en.wikipedia.org/wiki/HTML5) - For adding content and formatting.
+- [CSS](https://en.wikipedia.org/wiki/CSS) - For adding style and colours.
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - For adding interactive features.
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - High-level, general-purpose programming language.
+
+### **Django and Python Packages**
+
+- [asgiref](https://pypi.org/project/asgiref/) - a standard interface between web servers and Python web applications.
+- [boto3](https://pypi.org/project/boto3/) - providing access to AWS services.
+- [botocore](https://pypi.org/project/botocore/) - Low-level, core functionality of AWS SDK for Python (Boto3).
+- [dj-database-url](https://pypi.org/project/dj-database-url/) - A utility for utilizing database URLs in Django applications.
+- [Django](https://www.djangoproject.com/) - A Python-based web framework that follows the model-template-view architectural pattern, used for building the project.
+- [django-allauth](https://django-allauth.readthedocs.io/) - A Django application used for account registration, management, and authentication.
+- [django-countries](https://pypi.org/project/django-countries/) - A Django application for providing country choices for forms.
+- [django-crispy-forms](https://pypi.org/project/django-crispy-forms/) - A Django application that makes it easy to style Django forms.
+- [django-storages](https://pypi.org/project/django-storages/) - A collection of custom storage backends for Django.
+- [gunicorn](https://pypi.org/project/gunicorn/) - A Python Web Server Gateway Interface (WSGI) HTTP server.
+- [jmespath](https://pypi.org/project/jmespath/) - A query language for JSON, allowing you to search and manipulate JSON data.
+- [oauthlib](https://pypi.org/project/oauthlib/) - A generic and reusable Python library for implementing OAuth1 and OAuth2 providers.
+- [Pillow](https://pypi.org/project/Pillow/) - The Python Imaging Library adds image processing capabilities to your Python interpreter.
+- [psycopg2](https://pypi.org/project/psycopg2/) - A PostgreSQL adapter for Python.
+- [python3-openid](https://pypi.org/project/python3-openid/) - A set of Python packages for implementing OpenID Connect.
+- [requests-oauthlib](https://pypi.org/project/requests-oauthlib/) - OAuthlib authentication support for Requests.
+- [s3transfer](https://pypi.org/project/s3transfer/) - An Amazon S3 Transfer Manager for Python.
+- [sqlparse](https://pypi.org/project/sqlparse/) - A non-validating SQL parser module for Python.
+- [stripe](https://pypi.org/project/stripe/) - A Python library for the Stripe API.
+- [urllib3](https://pypi.org/project/urllib3/) - A powerful HTTP client for Python, which provides features such as connection pooling, request retries, and more.
+
+### **Programs/Tools Used**
+
+- [Amazon AWS](https://aws.amazon.com/) - Used to store the static and media files for the site.
+- [Mailchimp](https://mailchimp.com/) - Used to create the newsletter signup form.
+- [Stripe](https://stripe.com/gb) has been used for the payment processing and webhooks handling.
+- [GitHub](https://github.com/) - Source code hosted on GitHub, deployed using Git Pages.
+- [Font Awesome](https://fontawesome.com/) - Font Awesome use to source necessary icons used in the project.
+- [Balsamiq](https://balsamiq.com/) - Used to create wireframes and website structure map for the project.
+- [Google Keep](https://keep.google.com/) - Used to make notes during the project duration.
+- [LanguageTool](https://languagetool.org/) - Used for general spell-check.
+- [Google Fonts](https://fonts.google.com/) - Used to import fonts to the project.
+- [GifCap](https://gifcap.dev/) - Used to capture gif-s of the project.
+- [Heroku](https://www.heroku.com/) - Used to deploy the project.
+- [Lucidchart](https://www.lucidchart.com/pages/examples/flowchart-maker) - Used to make the iteration flowchart for the project.
+- [Bootstrap clean blog](https://startbootstrap.com/theme/clean-blog) - Bootstrap blog template imported in for content management and CSS.
+- [ElephantSQL](https://www.elephantsql.com/) - Free and open-source relational database management system (RDBMS).
+- [Bootstrap5](https://getbootstrap.com/) - Used for adding predefined styled elements and creating responsiveness.
+- [Pixillion Image Converter](https://www.nchsoftware.com/imageconverter/index.html?ns=true&kw=pixillion%20image%20converter&gclid=Cj0KCQiA99ybBhD9ARIsALvZavXKEsfJf5-WRUHKOv8Luf35hSJFHVg7l8SLYQtDfGnAyDrmVsToYwgaAtHqEALw_wcB) - Used to convert the images into webp format
+- [Email on Deck](https://www.emailondeck.com/) - Used for testing various email communication/verification.
+- [WebsitePolicies](https://www.websitepolicies.com/terms-and-conditions-generator) - Used to create T&C's for the project.
+- [TermsFeed](https://www.termsfeed.com/privacy-policy-generator/) - Used to create Privacy Policy for the project.
+- [JsHint](https://jshint.com/) - Used for validating the javascript code.
+- [CI Python Linter](https://pep8ci.herokuapp.com/#) - Used for validating the python code.
+- [HTML W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_options) - Used for validating the HTML.
+- [CSS Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri) - Used for validating the CSS.
+- [Chrome Del Tools](https://developer.chrome.com/docs/devtools/) - For debugging the project.
+- [W.A.V.E.](https://wave.webaim.org/) - Used for testing accessibility.
+- [LightHouse](https://developer.chrome.com/docs/lighthouse/overview/) - Used for testing performance.
+
+[Back to top ⇧](#depo-PC)
+
+---
+
+## Deployment
+
+- This project was developed using [CodeAnyWhere](https://codeanywhere.com/).
+- I have used the terminal to commit changes in my GitHub repository.
+- In the GitHub I have created User Stories and Epics, the commits are related to them based on the id that gitHub generated for each issue that was created.
+
+### Prepare before Deploy
+1. Create an `.env` file in your project, at root level.
+2. Add in this file your secret keys.
+3. Run `pip3 install -r requirements.txt` to install needed packages.
+4. Run `python3 manage.py migrate` to migrate your DB models.
+5. Run `python3 manage.py createsuperuser` to create a superuser.
+6. Run `python3 manage.py runserver` to start the server.
+7. Create an `Procfile` file in your project, at root level.
+
+### Deploying on Heroku Pages
+To deploy this web app to Heroku Pages from GitHub repository, the following steps were taken:
+
+1. Log into [GitHub](https://github.com/login "Link to GitHub login page") or [create an account](https://github.com/join "Link to GitHub create account page").
+2. Locate the [GitHub Repository](https://github.com/GeorgeH23/gym-pro-fitness "Link to GitHub Repo").
+3. Create an account on [Heroku:](https://dashboard.heroku.com/apps).
+4. Create a new Heroku app.
+5. Set the BuilPacks and the Config Vars.
+6. Link the Heroku app to the git hub repository.
+7. Set up AWS hosting for static and media files.
+8. Creating AWS groups, policies and users.
+9. Connecting Django to S3 bucket.
+10. Setting up Stripe
+11. Update the Config Vars.
+12. Click on Deploy.
+
+###### [Back to top ⇧](#table-of-contents)
+
+## **Testing**
+
+**Testing information can be found in a separate testing file [TESTING.md](/TESTING.md).**
+
+[Back to top ⇧](#depo-PC)
+
+---
+
+## **Credits**
+
+### **Code used and adapted**
+
+ - The Code Institute's [Boutique Ado](https://github.com/Boiann/boutique_ado) walkthrough project provided a lot of the site's original functionality, direction and design choices that were modified and expanded as needed. It was relied on heavily during whole development process and a lot of code is used directly from it, or with changes/updates to it.
+
+ - [Boudoir Studio](https://boiann.github.io/boudoir-studio/index.html) ( GithHub repository [here](https://github.com/Boiann/boudoir-studio) ) and my previous project gym-pro-fitness. The ReadME file was inspired from my first project [Travel Addict](https://github.com/GeorgeH23/travel-addict/blob/main/README.md) and [Books4Life](https://github.com/tomdu3/books4life/) and [Art-gallery](https://cvek-art-gallery-d4a224801c39.herokuapp.com/)
+- All other content was written by the developer
+
+### **Websites visited for info and solutions**
+
+Sites visited during the duration of the project.
+[Google](https://google.com/ "Google home page") was used to produce results of the specific query,
+[Stack Overflow](https://stackoverflow.com/ "Stack Overflow home page"),
+[Django documentation](https://docs.djangoproject.com/en/4.2/),
+[Bootstrap documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/).
+
+[Back to top ⇧](#depo-PC)
