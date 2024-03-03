@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /admin/
+Disallow: /profiles/
+Disallow: /cart/
+Disallow: /checkout/
+Sitemap: https://depo-pc-1fa940aecc2f.herokuapp.com/sitemap.xml
