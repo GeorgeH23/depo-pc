@@ -4,7 +4,7 @@ Welcome to Depo PC: Your Ultimate Computer Hardware Haven!
 
 Depo PC is your one-stop destination for all things computer hardware. Dive into a world where cutting-edge technology meets seamless e-commerce, offering a curated selection of top-notch components, peripherals, and accessories. Our platform is designed to cater to tech enthusiasts, gamers, and professionals alike, providing a hassle-free shopping experience for all your computing needs.
 
-![Responsive website image](readme_assets/images/general/responsive.png)
+![Responsive website image](readme_assets/images/responsive.png)
 
 Visit the live site - [depo PC](https://depo-pc-1fa940aecc2f.herokuapp.com/ "Link to depo PC")
 
@@ -344,41 +344,41 @@ But we don't stop there. Our newsletter subscription, powered by MailChimp, keep
 
 <summary>User stories/tasks development</summary>
 
-**=== Epics ===**
-EPIC: Admin Functions epic must-have
-EPIC: Checkout Process epic must-have
-EPIC: Purch Process epic must-have
-EPIC: Search and Sort Products epic must-have
-EPIC: Products epic must-have
-EPIC: Home Page and Navigation epic should-have
-EPIC: Contact Page epic should-have
-EPIC: User Authentication epic should-have
-EPIC: Wishlist could-have epic
+**Epics**
+- EPIC: Admin Functions epic must-have
+- EPIC: Checkout Process epic must-have
+- EPIC: Purch Process epic must-have
+- EPIC: Search and Sort Products epic must-have
+- EPIC: Products epic must-have
+- EPIC: Home Page and Navigation epic should-have
+- EPIC: Contact Page epic should-have
+- EPIC: User Authentication epic should-have
+- EPIC: Wishlist could-have epic
 
-**=== Stories ===**
-USER STORY: Delete Product By Admin must-have user story
-USER STORY: Edit/Update Product by Admin must-have user story
-USER STORY: Add Product by Admin must-have user story
-USER STORY: Checkout Page must-have user story
-USER STORY: Purch bag must-have user story
-USER STORY: Result summary must-have user story
-USER STORY: Multiple filters should-have user story
-USER STORY: Filter Searched Products must-have user story
-USER STORY: Sort Products must-have user story
-USER STORY: Total Price easy to see should-have user story
-USER STORY: Product Offers must-have user story
-USER STORY: Product details Page must-have user story
-USER STORY: Products page must-have user story
-USER STORY: Navigation Menu should-have user story
-USER STORY: Home Page should-have user story
-USER STORY: Create Contact Page should-have user story
-USER STORY: User Login Page should-have user story
-USER STORY: User Registration should-have user story
-USER STORY: Wishlist Page could-have user story
-USER STORY: Remove Products from the Wishlist could-have user story
-USER STORY: Add Products to the Wishlist could-have user story
-USER STORY: Order Confirmation could-have user story
-USER STORY: Project Set Up must-have user story
+**Stories**
+- USER STORY: Delete Product By Admin must-have user story
+- USER STORY: Edit/Update Product by Admin must-have user story
+- USER STORY: Add Product by Admin must-have user story
+- USER STORY: Checkout Page must-have user story
+- USER STORY: Purch bag must-have user story
+- USER STORY: Result summary must-have user story
+- USER STORY: Multiple filters should-have user story
+- USER STORY: Filter Searched Products must-have user story
+- USER STORY: Sort Products must-have user story
+- USER STORY: Total Price easy to see should-have user story
+- USER STORY: Product Offers must-have user story
+- USER STORY: Product details Page must-have user story
+- USER STORY: Products page must-have user story
+- USER STORY: Navigation Menu should-have user story
+- USER STORY: Home Page should-have user story
+- USER STORY: Create Contact Page should-have user story
+- USER STORY: User Login Page should-have user story
+- USER STORY: User Registration should-have user story
+- USER STORY: Wishlist Page could-have user story
+- USER STORY: Remove Products from the Wishlist could-have user story
+- USER STORY: Add Products to the Wishlist could-have user story
+- USER STORY: Order Confirmation could-have user story
+- USER STORY: Project Set Up must-have user story
 
 ---
 
