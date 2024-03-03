@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['depo-pc-1fa940aecc2f.herokuapp.com', '8000-georgeh23-depo-pc-g5bq6z7f6n.us1.codeanyapp.com', '127.0.0.1', 'localhost']
 
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'cart',
     'checkout',
     'profiles',
+    'support',
     'crispy_forms',
     'storages',
 ]

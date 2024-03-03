@@ -1,0 +1,22 @@
+Hi {{ name }}!
+
+Thank you for contacting us,
+we will be in touch with you shortly!
+
+This is a copy of your message:
+
+-----------------
+
+{{ message }}
+
+-----------------
+
+If your query demands urgent attention,
+please call us at the phone number provided on the website.
+
+https://depo-pc-1fa940aecc2f.herokuapp.com/
+
+
+Talk soon,
+
+depo PC

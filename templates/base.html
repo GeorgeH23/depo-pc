@@ -27,6 +27,7 @@
     {% endblock %}
 
     {% block extra_css %}
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
     {% endblock %}
 
     {% block corejs %}
@@ -160,9 +161,7 @@
     <footer class="text-center font-weight-bold">
         <section class="d-flex justify-content-center p-4 mt-5 border-bottom-rainbow">
             <h2 class="me-5">
-                <a class="btn btn-outline-dark font-weight-bold" 
-                    href="">Subscribe to our Newsletter!
-                </a>
+                <a class="btn btn-outline-dark font-weight-bold" href="{% url 'subscribe' %}">Subscribe to our Newsletter!</a>
             </h2>
         </section>
         <!-- Footer content -->
@@ -181,10 +180,26 @@
                         </p>
                     </div>
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        Get to Know Us
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Get to Know Us
+                        </h6>
+                        <p>
+                            <a href="{% url 'about' %}" class="text-reset">About Us</a>
+                        </p>
+                        <p>
+                            <a href="{% url 'contact' %}" class="text-reset">Contact Us</a>
+                        </p>
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        Information Hub
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Information Hub
+                        </h6>
+                        <p>
+                            <a href="{% url 't_and_c' %}" class="text-reset">Terms and Conditions</a>
+                        </p>
+                        <p>
+                            <a href="{% url 'privacy' %}" class="text-reset">Privacy Policy</a>
+                        </p>
                     </div>
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                         <!-- Social Links -->
