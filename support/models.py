@@ -6,7 +6,6 @@ class Contact(models.Model):
     # Choices for the reason of contac
     CONTACT_REASONS = [
         ('', 'Reason of Contact'),
-        ('PAINTING', 'Painting/s'),
         ('ORDER', 'Order'),
         ('SUGGESTIONS', 'Suggestions'),
         ('OTHER', 'Other'),
