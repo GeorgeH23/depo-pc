@@ -504,7 +504,72 @@ To deploy this web app to Heroku Pages from GitHub repository, the following ste
 
 ## **Testing**
 
-**Testing information can be found in a separate testing file [TESTING.md](/TESTING.md).**
+## Automated Testing
+
+### **W3C HTML Validator**
+
+The [HTML W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_options) was used to validate the HTML code used, showing no errors.
+
+<details>
+<summary>HTML Validation:</summary>
+
+ - Index
+ <br>
+
+![Index](readme_assets/images/tests/html/html-index.png)
+
+ - Paintings
+ <br>
+
+![Products](readme_assets/images/tests/html/html-products.png)
+
+ - Painting detail
+ <br>
+
+![Product details](readme_assets/images/tests/html/html-product-details.png)
+
+ - Cart
+ <br>
+
+![Cart](readme_assets/images/tests/html/html-cart.png)
+
+ - Checkout
+ <br>
+
+![Checkout](readme_assets/images/tests/html/html-checkout.png)
+
+ - Checkout success
+ <br>
+
+I test the importent ones, rest are the same.
+
+</details>
+
+### **W3C CSS Validator**
+
+The [CSS Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri) was used to validate the CSS code used, showing no errors.
+
+<details>
+<summary>CSS Validation:</summary>
+
+![CSS Validator](readme_assets/images/tests/css-base.png.png)
+
+</details>
+
+---
+
+### **JSHINT Javascript Validator**
+
+The [JsHint](https://jshint.com/) was used to validate the Javascript code used, showing no errors.
+
+<details>
+<summary>Javascript Validation:</summary>
+
+![Javascript Validator](readme_assets/images/tests/js.png)
+
+</details>
+
+---
 
 [Back to top ⇧](#depo-PC)
 
