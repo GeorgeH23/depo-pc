@@ -85,14 +85,17 @@
                 aria-haspopup="true" aria-expanded="false">About
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="about-link">
-                <a href="" 
+                <a href="{% url 'about' %}" 
                     class="dropdown-item">About Us
                 </a>
-                <a href="" 
+                <a href="{% url 'contact' %}"
                     class="dropdown-item">Contact Us
                 </a>
-                <a href="" 
-                    class="dropdown-item">License
+                <a href="{% url 't_and_c' %}" 
+                    class="dropdown-item">T&C's
+                </a>
+                <a href="{% url 'privacy' %}"
+                    class="dropdown-item">Privacy
                 </a>
             </div>
         </li>
