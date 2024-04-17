@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -31,3 +32,14 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class WishList(models.Model):
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    products = models.ManyToManyField(Product)
+
+    class Meta:
+        verbose_name_plural = 'wishlists'
+
+    def __str__(self):
+        return f'WishList for {self.user.username}'
