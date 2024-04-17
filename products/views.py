@@ -3,7 +3,8 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
-from .models import Product, Category
+from django.http import JsonResponse
+from .models import Product, Category, WishList
 from .forms import ProductForm
 
 # Create your views here.
@@ -139,3 +140,29 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+@login_required
+def wishlist_view(request):
+    """ Display products from Wishlist """
+    wishlist = WishList.objects.all()
+    context = {
+        'w': wishlist
+    }
+
+    return render(request, 'products/wishlist.html', context)
+
+
+@login_required
+def add_to_wishlist(request, product_id):
+    """ Add a product to the Wishlist """
+    try:
+        product = Product.objects.get(id=product_id)
+        wishlist, created = WishList.objects.get_or_create(user=request.user)
+        wishlist.products.add(product)
+        context = {"bool": True}
+    except Product.DoesNotExist:
+        context = {"bool": False, "message": "Product does not exist."}
+
+    return JsonResponse(context)
+
