@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['depo-pc-1fa940aecc2f.herokuapp.com', '8000-georgeh23-depo-pc-vngvhonzf5.us1.codeanyapp.com', 'localhost']
+ALLOWED_HOSTS = ['depo-pc-1fa940aecc2f.herokuapp.com', '8000-georgeh23-depo-pc-vngvhonzf5.us1.codeanyapp.com', '127.0.0.1' ,'localhost']
 
 
 # Application definition
