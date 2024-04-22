@@ -34,12 +34,12 @@ class Product(models.Model):
         return self.name
 
 
-class WishList(models.Model):
+class Favorite(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     products = models.ManyToManyField(Product)
 
     class Meta:
-        verbose_name_plural = 'wishlists'
+        verbose_name_plural = 'favorites'
 
     def __str__(self):
-        return f'WishList for {self.user.username}'
+        return f'Favorites for {self.user.username}'
