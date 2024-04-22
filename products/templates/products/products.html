@@ -89,9 +89,11 @@
                                                         <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                                                     </small>
                                                 {% endif %}
-                                                <button style="border: none; background: none; margin-left: 50%; font-size: 1.5rem;" class="add-to-wishlist" data-product-item="{{ product.id }}">
-                                                    <i class="fa fa-heart text-danger" aria-hidden="true"></i> 
-                                                </button>
+                                                {% if request.user.is_authenticated %}
+                                                    <button style="border: none; background: none; margin-left: 50%; font-size: 1.5rem;" class="add-to-favorite" data-prod-item="{{ product.id }}">
+                                                        <i class="fa fa-heart text-danger" aria-hidden="true"></i> 
+                                                    </button>
+                                                {% endif %}
                                             </div>
                                         </div>
                                     </div>
@@ -127,5 +129,5 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    <script src="{% static 'products/js/wishlist.js' %}"></script>
+    <script src="{% static 'products/js/favorite.js' %}"></script>
 {% endblock %}

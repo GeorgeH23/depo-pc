@@ -4,7 +4,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
-from .models import Product, Category, WishList
+from .models import Product, Category, Favorite
 from .forms import ProductForm
 
 # Create your views here.
@@ -143,26 +143,25 @@ def delete_product(request, product_id):
 
 
 @login_required
-def wishlist_view(request):
-    """ Display products from Wishlist """
-    wishlist = WishList.objects.all()
+def favorite_view(request):
+    """ Display products from Favorite """
+    favorite = Favorite.objects.all()
     context = {
-        'w': wishlist
+        'f': favorite
     }
 
-    return render(request, 'products/wishlist.html', context)
+    return render(request, 'products/favorite.html', context)
 
 
 @login_required
-def add_to_wishlist(request, product_id):
-    """ Add a product to the Wishlist """
+def add_to_favorite(request, product_id):
+    """ Add a product to the Favorite """
     try:
         product = Product.objects.get(id=product_id)
-        wishlist, created = WishList.objects.get_or_create(user=request.user)
-        wishlist.products.add(product)
+        favorite, created = Favorite.objects.get_or_create(user=request.user)
+        favorite.products.add(product)
         context = {"bool": True}
     except Product.DoesNotExist:
         context = {"bool": False, "message": "Product does not exist."}
 
     return JsonResponse(context)
-

@@ -28,6 +28,14 @@
                         </a>
                     {% endif %}
                 </div>
+                {% if request.user.is_authenticated %}
+                    <button class="btn btn-outline-black rounded-0 mt-5 add-to-favorite" data-prod-item="{{ product.id }}">
+                        <span class="icon">
+                            <i class="fa fa-heart" aria-hidden="true"></i> 
+                        </span>
+                        <span class="text-uppercase">Add to Favorite</span>
+                    </button>
+                {% endif %}
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
@@ -56,9 +64,6 @@
                                 <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                             </small>
                         {% endif %}
-                        <button style="border: none; background: none; margin-left: 30%; font-size: 1.5rem;" class="add-to-wishlist" data-product-item="{{ product.id }}">
-                            <i class="fa fa-heart text-danger" aria-hidden="true"></i> 
-                        </button>
                     </div>
                     <p class="mt-3">{{ product.description }}</p>
                     <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
@@ -119,5 +124,5 @@
 {% block postloadjs %}
     {{ block.super }}
     {% include 'products/includes/quantity_input_script.html' %}
-    <script src="{% static 'products/js/wishlist.js' %}"></script>
+    <script src="{% static 'products/js/favorite.js' %}"></script>
 {% endblock %}
