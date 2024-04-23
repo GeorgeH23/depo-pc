@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 html {
     height: 100%;
     scroll-behavior: smooth;
@@ -6,6 +8,19 @@ html {
 
 body {
     height: 100vh;
+    font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+    font-family: 'Nunito Black', sans-serif;;
+}
+
+h2, h3, h4 {
+    font-family: 'Nunito Bold', sans-serif;;
+}
+
+p {
+    font-family: 'Nunito', sans-serif;;
 }
 
 .h-100-calc {
@@ -21,6 +36,19 @@ body {
 
 #mc_embed_signup h2 {
     text-align: center;
+}
+
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sm-divider {
+    margin: auto;
+    width: 96%;
+}
+
+.bag-items {
+    padding: 10px;
 }
 
 .landing {
@@ -57,7 +85,7 @@ body {
 }
   
 .border-bottom-rainbow {
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
     animation: rainbow 6s linear infinite; /* 6s for a complete cycle */
 }
 
@@ -70,8 +98,18 @@ body {
     width: 1.5rem;
 }
 
-.logo-font {
-    text-transform: uppercase;
+@keyframes rainbow-a {
+    0% { color: darkred; }
+    16.666% { color: chocolate; }
+    33.333% { color: goldenrod; }
+    50% { color: darkseagreen; }
+    66.666% { color: darkcyan;}
+    83.333% { color: mediumpurple; }
+    100% { color: darkmagenta; }
+}
+
+.logo-text {
+    animation: rainbow-a 5s alternate-reverse infinite !important;
 }
 
 .main-logo-link {
