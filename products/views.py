@@ -4,8 +4,6 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
-from django.core import serializers
-from django.template.loader import render_to_string
 from .models import Product, Category, Favorite
 from .forms import ProductForm
 
@@ -170,18 +168,17 @@ def add_to_favorite(request, product_id):
 
 
 @login_required
-def remove_from_favorite(request):
+def remove_from_favorite(request, product_id):
     """ Remove a product from the Favorite """
-    pid = request.GET['id']
-    favorite = Favorite.objects.filter(user=request.user)
-    favorite_d = Favorite.objects.get(id=pid)
+    favorite = Favorite.objects.get(user=request.user)
+    product_instance = Product.objects.get(id=product_id)
+    favorite.products.remove(product_instance)
 
-    delete_product = favorite_d.delete()
+    favorite.save()
+    favorite = Favorite.objects.all()
 
     context = {
-        "bool": True,
         "f": favorite
     }
-    favorite_json = serializers.serialize('json', favorite)
-    t = render_to_string("products/favorite.html", context)
-    return JsonResponse({"data": t, "f":favorite_json})
+
+    return render(request, 'products/favorite.html', context)

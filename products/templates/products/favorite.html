@@ -49,14 +49,17 @@
                                         {% endif %}
                                     </div>
                                     <div class="card-footer">
-                                        <button style="border: none; background: none; margin-left: 50%; font-size: 1.5rem;" 
-                                            class="delete-favorite-product" data-favorite-product="{{ product.id }}">
-                                            <i class="fa fa-trash" aria-hidden="true"></i> 
-                                        </button>
-                                        <!-- Add the button 'Add to bag' here -->
+                                        <form class="form"  action="{% url 'remove-from-favorite' product.id %}" method="POST" style="display: inline;">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="id" value="{{ product.id }}">
+                                            <button type="submit" style="border: none; background: none; margin-left: 50%; font-size: 1.5rem;" class="delete-favorite-product" data-favorite-product="{{ product.id }}">
+                                                <i class="fa fa-trash" aria-hidden="true"></i> 
+                                            </button>
+                                        </form> 
                                         <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST" style="display: inline;">
                                             {% csrf_token %}
                                             <input type="hidden" name="quantity" value="1">
+                                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                             <button type="submit" class="btn btn-primary">Add to Bag</button>
                                         </form>
                                     </div>
