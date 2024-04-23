@@ -52,6 +52,7 @@
                                         <form class="form"  action="{% url 'remove-from-favorite' product.id %}" method="POST" style="display: inline;">
                                             {% csrf_token %}
                                             <input type="hidden" name="id" value="{{ product.id }}">
+                                            <input type="hidden" name="redirect_url" value="{{ redirect_url }}">
                                             <button type="submit" style="border: none; background: none; margin-left: 50%; font-size: 1.5rem;" class="delete-favorite-product" data-favorite-product="{{ product.id }}">
                                                 <i class="fa fa-trash" aria-hidden="true"></i> 
                                             </button>

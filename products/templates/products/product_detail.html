@@ -29,12 +29,27 @@
                     {% endif %}
                 </div>
                 {% if request.user.is_authenticated %}
-                    <button class="btn btn-outline-black rounded-0 mt-5 add-to-favorite" data-prod-item="{{ product.id }}">
-                        <span class="icon">
-                            <i class="fa fa-heart" aria-hidden="true"></i> 
-                        </span>
-                        <span class="text-uppercase">Add to Favorite</span>
-                    </button>
+                    {% if product.id in product_in_favorites %}
+                        <form class="form"  action="{% url 'remove-from-favorite' product.id %}" method="POST" style="display: inline;">
+                            {% csrf_token %}
+                            <input type="hidden" name="id" value="{{ product.id }}">
+                            <input type="hidden" name="redirect_url" value="{{ redirect_url }}">
+                            <button class="btn btn-outline-black rounded-0 mt-5 add-to-favorite" data-prod-item="{{ product.id }}">
+                                <span class="icon">
+                                    <i class="fa fa-heart" aria-hidden="true"></i> 
+                                </span>
+                                <span class="text-uppercase">Remove from Favorite</span>
+                            </button>
+                        </form>
+                    {% else %}
+                        <input type="hidden" name="redirect_url" value="{{ redirect_url }}">
+                        <button class="btn btn-outline-black rounded-0 mt-5 add-to-favorite" data-prod-item="{{ product.id }}">
+                            <span class="icon">
+                                <i class="fa fa-heart" aria-hidden="true"></i> 
+                            </span>
+                            <span class="text-uppercase">Add to Favorite</span>
+                        </button>
+                    {% endif %}
                 {% endif %}
             </div>
             <div class="col-12 col-md-6 col-lg-4">

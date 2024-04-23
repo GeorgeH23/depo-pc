@@ -17,6 +17,8 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
+    product_in_favorites = {}
+    favorite_ids = []
 
     if request.GET:
         if 'sort' in request.GET:
@@ -49,6 +51,13 @@ def all_products(request):
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
+    if request.user.is_authenticated:
+        favorite_instance = Favorite.objects.filter(user=request.user).first()
+        favorite_products = favorite_instance.products.all()
+        favorite_ids = [product.id for product in favorite_products]
+    
+    redirect_url = request.POST.get('redirect_url')
+
     current_sorting = f'{sort}_{direction}'
 
     context = {
@@ -56,6 +65,8 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'product_in_favorites': favorite_ids,
+        'redirect_url': redirect_url,
     }
 
     return render(request, 'products/products.html', context)
@@ -65,9 +76,19 @@ def product_detail(request, product_id):
     """ A view for the product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    product_in_favorites = {}
+    favorite_ids = []
+    redirect_url = request.POST.get('redirect_url')
+
+    if request.user.is_authenticated:
+            favorite_instance = Favorite.objects.filter(user=request.user).first()
+            favorite_products = favorite_instance.products.all()
+            favorite_ids = [product.id for product in favorite_products]
 
     context = {
         'product': product,
+        'product_in_favorites': favorite_ids,
+        'redirect_url': redirect_url,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -177,8 +198,12 @@ def remove_from_favorite(request, product_id):
     favorite.save()
     favorite = Favorite.objects.all()
 
+    # Pass the redirect_url to the template
+    redirect_url = request.POST.get('redirect_url')
+
     context = {
-        "f": favorite
+        "f": favorite,
+        'redirect_url': redirect_url,
     }
 
     return render(request, 'products/favorite.html', context)
