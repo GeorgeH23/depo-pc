@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category, Favorite
+from .models import Product, Category, Favorite, Review
 
 # Register your models here.
 
@@ -36,3 +36,4 @@ class FavoriteAdmin(admin.ModelAdmin):
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Favorite, FavoriteAdmin)
+admin.site.register(Review)
