@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 
 class Category(models.Model):
@@ -43,3 +44,24 @@ class Favorite(models.Model):
 
     def __str__(self):
         return f'Favorites for {self.user.username}'
+
+
+RATING = (
+    (1, '1'),
+    (2, '2'),
+    (3, '3'),
+    (4, '4'),
+    (5, '5'),
+)
+class Review(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    comment = models.TextField()
+    review_rating = models.CharField(choices=RATING, max_length=150)
+    created_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f"Review by {self.user.username} for {self.product.name}"
+
+    def get_review_rating(self):
+        return self.review_rating
