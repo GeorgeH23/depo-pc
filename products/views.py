@@ -231,4 +231,4 @@ def add_review(request, product_id):
         'product': product,
     }
 
-    return render(request, 'add_review.html', context)
+    return render(request, 'products/add_review.html', context)
