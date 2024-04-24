@@ -4,8 +4,8 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
-from .models import Product, Category, Favorite
-from .forms import ProductForm
+from .models import Product, Category, Favorite, Review
+from .forms import ProductForm, ReviewForm
 
 # Create your views here.
 
@@ -79,6 +79,7 @@ def product_detail(request, product_id):
     product_in_favorites = {}
     favorite_ids = []
     redirect_url = request.POST.get('redirect_url')
+    reviews = product.review_set.all()
 
     if request.user.is_authenticated:
             favorite_instance = Favorite.objects.filter(user=request.user).first()
@@ -89,6 +90,7 @@ def product_detail(request, product_id):
         'product': product,
         'product_in_favorites': favorite_ids,
         'redirect_url': redirect_url,
+        'reviews': reviews
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -207,3 +209,36 @@ def remove_from_favorite(request, product_id):
     }
 
     return render(request, 'products/favorite.html', context)
+
+
+# @login_required
+# def reviews(request):
+#     """ Display Reviewed products """
+#     reviews = ProductReview.objects.all()
+#     context = {
+#         'r': reviews
+#     }
+
+#     return render(request, 'products/reviews.html', context)
+
+@login_required
+def add_review(request, product_id):
+    product = Product.objects.get(id=product_id)
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.product = product
+            review.user = request.user
+            review.save()
+            return redirect('product_detail', product_id=product_id)
+    else:
+        form = ReviewForm()
+    
+    context = {
+        'form': form, 
+        'product': product,
+    }
+
+    return render(request, 'add_review.html', context)
