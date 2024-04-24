@@ -53,8 +53,9 @@ def all_products(request):
 
     if request.user.is_authenticated:
         favorite_instance = Favorite.objects.filter(user=request.user).first()
-        favorite_products = favorite_instance.products.all()
-        favorite_ids = [product.id for product in favorite_products]
+        if favorite_instance:
+            favorite_products = favorite_instance.products.all()
+            favorite_ids = [product.id for product in favorite_products]
     
     redirect_url = request.POST.get('redirect_url')
 
@@ -82,7 +83,8 @@ def product_detail(request, product_id):
     reviews = product.review_set.all()
 
     if request.user.is_authenticated:
-            favorite_instance = Favorite.objects.filter(user=request.user).first()
+        favorite_instance = Favorite.objects.filter(user=request.user).first()
+        if favorite_instance:
             favorite_products = favorite_instance.products.all()
             favorite_ids = [product.id for product in favorite_products]
 
