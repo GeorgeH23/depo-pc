@@ -211,16 +211,6 @@ def remove_from_favorite(request, product_id):
     return render(request, 'products/favorite.html', context)
 
 
-# @login_required
-# def reviews(request):
-#     """ Display Reviewed products """
-#     reviews = ProductReview.objects.all()
-#     context = {
-#         'r': reviews
-#     }
-
-#     return render(request, 'products/reviews.html', context)
-
 @login_required
 def add_review(request, product_id):
     product = Product.objects.get(id=product_id)
