@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container page-margins">
+        <div class="row error-box extra-p-btm">
+            <div class="col-12">
+                <a class="error-img" href="{% url 'home' %}">
+                    <img src="{% static 'img/004.jpg' %}" alt="Home Link">
+                </a>
+                <p class="m-0">Sorry, there is an issue with our servers</p>
+                <p>Please try again later.</p>
+                <p class="text-muted m-0">If the problem persists, please contact us via our</p> 
+                <p><strong><a class="pages-link" href="{% url 'contact' %}">Contact Page</a></strong>.</p>
+            </div>
+            <div class="col-12 error-link">
+                <a href="{% url 'home' %}">Return to Home</a>
+            </div>
+        </div>    
+    </div>
+{% endblock %}

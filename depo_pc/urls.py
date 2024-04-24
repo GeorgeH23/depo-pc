@@ -28,3 +28,9 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
     path('support/', include('support.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Define custom 404 error handler
+handler400 = 'depo_pc.views.error_400_view'
+handler403 = 'depo_pc.views.error_403_view'
+handler404 = 'depo_pc.views.error_404_view'
+handler500 = 'depo_pc.views.error_500_view'

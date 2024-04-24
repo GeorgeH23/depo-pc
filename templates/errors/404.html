@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+
+    <div class="container page-margins">
+        <div class="row error-box extra-p-btm">
+            <div class="col-12">
+                <a class="error-img" href="{% url 'home' %}">
+                    <img src="https://storyset.com/internet" alt="Home Link">
+                </a>
+                <p>Ooop! page does not exist...</p>
+            </div>
+            <div class="col-12 error-link">
+                <a href="{% url 'home' %}">Return to Safety</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

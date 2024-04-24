@@ -74,6 +74,33 @@ p {
     z-index: -1;
 }
 
+/* --- Error Pages --- */
+.error-box {
+    margin: auto;
+    max-width: 95%;
+    text-align: center;
+}
+.error-img img {
+    width: 100%;
+    padding-bottom: 20px;
+}
+.error-link {
+    background-color: var(--black);
+    color: var(--white);
+    margin: auto;
+    padding: 10px 35px;
+    border-radius: 2px;
+    border: 0;
+    text-align: center;
+    max-width: 80%;
+    transition: all 0.5s ease 0s; 
+}
+.error-link:hover,
+.error-link:focus {
+    color: var(--yellow);
+}
+
+
 @keyframes rainbow {
     0% { border-color: violet; }
     16.666% { border-color: indigo; }
