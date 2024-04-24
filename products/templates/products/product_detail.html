@@ -134,6 +134,55 @@
             </div>
         </div>
     </div>
+    <hr class="w-100 mb-1 mt-5">
+    <div class="container-fluid">
+        <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+            <!-- Review Section -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3>Reviews</h3>
+                    {% for review in product.review_set.all %}
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ review.user.username }}</h5>
+                                <p class="card-text">{{ review.comment }}</p>
+                                <p class="card-text"><small class="text-muted">Posted on: {{ review.created_at }}</small></p>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <p>No reviews yet.</p>
+                    {% endfor %}
+                    <button type="button" class="btn btn-outline-black rounded-0 mt-5" data-toggle="modal" data-target="#addReviewModal">
+                        Add Review
+                    </button>
+                </div>
+            </div>
+
+            <!-- Add Review Modal -->
+            <div class="modal fade" id="addReviewModal" tabindex="-1" aria-labelledby="addReviewModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addReviewModalLabel">Add Review</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="POST" action="{% url 'add_review' product.id %}">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="comment">Comment:</label>
+                                    <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-outline-black rounded-0 mt-5">Submit Review</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 {% block postloadjs %}
