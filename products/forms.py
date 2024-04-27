@@ -19,6 +19,9 @@ class ProductForm(forms.ModelForm):
 
 
 class ReviewForm(forms.ModelForm):
+    comment = forms.CharField(widget=forms.Textarea(attrs={'rows': 3}))
+    review_rating = forms.ChoiceField(choices=Review.RATING, widget=forms.Select(attrs={'class': 'form-control'}))
+
     class Meta:
         model = Review
-        fields = ['comment']
+        fields = ['comment', 'review_rating']

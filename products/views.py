@@ -87,12 +87,15 @@ def product_detail(request, product_id):
         if favorite_instance:
             favorite_products = favorite_instance.products.all()
             favorite_ids = [product.id for product in favorite_products]
+    
+    form = ReviewForm()
 
     context = {
         'product': product,
         'product_in_favorites': favorite_ids,
         'redirect_url': redirect_url,
-        'reviews': reviews
+        'reviews': reviews,
+        'form': form, 
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -216,7 +219,8 @@ def remove_from_favorite(request, product_id):
 @login_required
 def add_review(request, product_id):
     product = Product.objects.get(id=product_id)
-
+    rating_choices = Review.RATING
+    
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
@@ -231,6 +235,7 @@ def add_review(request, product_id):
     context = {
         'form': form, 
         'product': product,
+        'review_rating': rating_choices,
     }
 
     return render(request, 'products/add_review.html', context)

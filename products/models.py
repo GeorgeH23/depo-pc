@@ -46,18 +46,18 @@ class Favorite(models.Model):
         return f'Favorites for {self.user.username}'
 
 
-RATING = (
-    (1, '1'),
-    (2, '2'),
-    (3, '3'),
-    (4, '4'),
-    (5, '5'),
-)
 class Review(models.Model):
+    RATING = (
+        ('1', '1'),
+        ('2', '2'),
+        ('3', '3'),
+        ('4', '4'),
+        ('5', '5'),
+    )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     comment = models.TextField()
-    review_rating = models.CharField(choices=RATING, max_length=150)
+    review_rating = models.CharField(max_length=1, null=True, choices=RATING)
     created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
