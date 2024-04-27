@@ -239,3 +239,47 @@ def add_review(request, product_id):
     }
 
     return render(request, 'products/add_review.html', context)
+
+
+@login_required
+def edit_review(request, review_id):
+    review = get_object_or_404(Review, id=review_id)
+    if request.user != review.user:
+        return HttpResponseForbidden("You are not authorized to edit this review.")
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Review edited!')
+            return redirect('product_detail', product_id=review.product.id)
+    else:
+        form = ReviewForm(instance=review)
+
+    context = {
+        'form': form,
+        'review': review,
+    }
+
+    return render(request, 'products/edit_review.html', context)
+
+
+@login_required
+def delete_review(request, review_id):
+    review = get_object_or_404(Review, id=review_id)
+
+    if request.user != review.user and not request.user.is_superuser:
+        return HttpResponseForbidden("You are not authorized to delete this review.")   
+
+    if request.method == 'POST':
+        review.delete()
+        messages.success(request, 'Review deleted!')
+        return redirect('product_detail', product_id=review.product.id)
+    
+    print(review_id)
+
+    context = {
+        'review': review,
+    }
+
+    return render(request, 'products/delete_review.html', context)
