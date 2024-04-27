@@ -216,6 +216,7 @@ def remove_from_favorite(request, product_id):
 
     favorite.save()
     favorite = Favorite.objects.all()
+    messages.success(request, 'Removed from Favorite!')
 
     # Pass the redirect_url to the template
     redirect_url = request.POST.get('redirect_url')
