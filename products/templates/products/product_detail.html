@@ -11,6 +11,7 @@
 
 {% block content %}
 <div class="overlay"></div>
+    <!-- Product Details Section -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
@@ -134,6 +135,8 @@
             </div>
         </div>
     </div>
+    <!-- End Product Details Section -->
+
     <hr class="w-100 mb-1 mt-5">
 
     <!-- Review Section -->
@@ -162,7 +165,29 @@
                     {% empty %}
                         <p>No reviews yet.</p>
                     {% endfor %}
-                    
+
+                    <!-- Pagination Links -->
+                    {% if reviews.has_other_pages %}
+                        <div class="pagination">
+                            <span class="step-links">
+                                {% if reviews.has_previous %}
+                                    <a href="?page=1"><i class="fas fa-angle-double-left"></i></a>
+                                    <a href="?page={{ reviews.previous_page_number }}"><i class="fas fa-angle-left"></i></a>
+                                {% endif %}
+
+                                <span class="current">
+                                    Page {{ reviews.number }} of {{ reviews.paginator.num_pages }}.
+                                </span>
+
+                                {% if reviews.has_next %}
+                                    <a href="?page={{ reviews.next_page_number }}"><i class="fas fa-angle-right"></i></a>
+                                    <a href="?page={{ reviews.paginator.num_pages }}"><i class="fas fa-angle-double-right"></i></a>
+                                {% endif %}
+                            </span>
+                        </div>
+                    {% endif %}
+                    <!-- End Pagination Links -->
+                                        
                     {% if not request.user.is_superuser %}
                         <button type="button" class="btn btn-outline-black rounded-0 mt-5" data-toggle="modal" data-target="#addReviewModal">
                             Add Review
@@ -170,8 +195,8 @@
                     {% endif %}
                 </div>
             </div>
-
-             <!-- Edit Review Modal -->
+            
+            <!-- Edit Review Modal -->
             <div class="modal fade" id="editReviewModal" tabindex="-1" aria-labelledby="editReviewModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -241,6 +266,7 @@
             </div>
         </div>
     </div>
+    <!-- End of Review Section -->
 {% endblock %}
 
 {% block postloadjs %}

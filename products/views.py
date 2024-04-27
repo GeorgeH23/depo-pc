@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
@@ -89,6 +90,17 @@ def product_detail(request, product_id):
             favorite_ids = [product.id for product in favorite_products]
     
     form = ReviewForm()
+
+    # Paginator
+    paginator = Paginator(reviews, 3)
+    page = request.GET.get('page')
+
+    try:
+        reviews = paginator.page(page)
+    except PageNotAnInteger:
+        reviews = paginator.page(1)
+    except EmptyPage:
+        reviews = paginator.page(paginator.num_pages)
 
     context = {
         'product': product,
