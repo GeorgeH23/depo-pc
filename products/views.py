@@ -80,7 +80,7 @@ def product_detail(request, product_id):
     product_in_favorites = {}
     favorite_ids = []
     redirect_url = request.POST.get('redirect_url')
-    reviews = product.review_set.all()
+    reviews = product.review_set.all().order_by('-created_at')
 
     if request.user.is_authenticated:
         favorite_instance = Favorite.objects.filter(user=request.user).first()

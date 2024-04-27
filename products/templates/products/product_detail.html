@@ -142,7 +142,7 @@
             <div class="row mt-5">
                 <div class="col-12">
                     <h3>Reviews</h3>
-                    {% for review in product.review_set.all %}
+                    {% for review in reviews %}
                         <div class="card mb-3">
                             <div class="card-body">
                                 <h5 class="card-title">{{ review.user.username }}</h5>
