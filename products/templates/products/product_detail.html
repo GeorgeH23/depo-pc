@@ -135,9 +135,10 @@
         </div>
     </div>
     <hr class="w-100 mb-1 mt-5">
+
+    <!-- Review Section -->
     <div class="container-fluid">
-        <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-            <!-- Review Section -->
+        <div class="col-12 col-md-6 col-lg-4 offset-lg-2" id="review-list">
             <div class="row mt-5">
                 <div class="col-12">
                     <h3>Reviews</h3>
@@ -146,20 +147,79 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ review.user.username }}</h5>
                                 <p class="card-text">{{ review.comment }}</p>
+                                <p class="card-text">{{ review.review_rating }}</p>
                                 <p class="card-text"><small class="text-muted">Posted on: {{ review.created_at }}</small></p>
                             </div>
+                            {% if review.user == request.user %}
+                                <a class="edit-review" data-toggle="modal" data-target="#editReviewModal" data-review-id="{{ review.id }}">Edit</a> | 
+                                <a class="delete-review" data-toggle="modal" data-target="#deleteReviewModal" data-review-id="{{ review.id }}">Delete</a>
+                            {% endif %}
+                            
+                            {% if request.user.is_superuser %}
+                                <a class="delete-review" data-toggle="modal" data-target="#deleteReviewModal" data-review-id="{{ review.id }}">Delete</a>
+                            {% endif %}
                         </div>
                     {% empty %}
                         <p>No reviews yet.</p>
                     {% endfor %}
-                    <button type="button" class="btn btn-outline-black rounded-0 mt-5" data-toggle="modal" data-target="#addReviewModal">
-                        Add Review
-                    </button>
+                    
+                    {% if not request.user.is_superuser %}
+                        <button type="button" class="btn btn-outline-black rounded-0 mt-5" data-toggle="modal" data-target="#addReviewModal">
+                            Add Review
+                        </button>
+                    {% endif %}
+                </div>
+            </div>
+
+             <!-- Edit Review Modal -->
+            <div class="modal fade" id="editReviewModal" tabindex="-1" aria-labelledby="editReviewModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editReviewModalLabel">Edit Review</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="editReviewForm" method="POST" action="">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="edit-comment">Edit Comment:</label>
+                                    <textarea class="form-control" id="edit-comment" name="comment" rows="3"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delete Review Modal -->
+            <div class="modal fade" id="deleteReviewModal" tabindex="-1"
+                aria-labelledby="deleteReviewModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteReviewModalLabel">Delete Review</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure you want to delete this review?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-danger del">Delete</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Add Review Modal -->
-            <div class="modal fade" id="addReviewModal" tabindex="-1" aria-labelledby="addReviewModalLabel" aria-hidden="true">
+            <div class="modal fade" id="addReviewModal" tabindex="-1" aria-labelledby="addReviewModalLabel" 
+                aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -168,14 +228,12 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body form-group">
+                            <!-- Review Form -->
                             <form method="POST" action="{% url 'add_review' product.id %}">
                                 {% csrf_token %}
-                                <div class="form-group">
-                                    <label for="comment">Comment:</label>
-                                    <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-outline-black rounded-0 mt-5">Submit Review</button>
+                                {{ form | crispy }}
+                                <button type="submit" class="btn btn-outline-black rounded-0 mt-3">Submit Review</button>
                             </form>
                         </div>
                     </div>
@@ -189,4 +247,34 @@
     {{ block.super }}
     {% include 'products/includes/quantity_input_script.html' %}
     <script src="{% static 'products/js/favorite.js' %}"></script>
+    <script>
+        $(document).ready(function() {
+            // Handle click on edit review button
+            $('.edit-review').click(function() {
+                var reviewId = $(this).data('review-id');
+                console.log("Review ID:", reviewId);
+                $.ajax({
+                    url: '{% url "edit_review" 0 %}'.replace('0', reviewId),
+                    type: 'GET',
+                    success: function(data) {
+                        $('#editReviewModal .modal-content').html(data);
+                    }
+                });
+            });
+
+            // Handle click on delete review button
+            $('.delete-review').click(function() {
+                var reviewId = $(this).data('review-id');
+                console.log("Review ID:", reviewId);
+                $.ajax({
+                    url: '{% url "delete_review" 0 %}'.replace('0', reviewId),
+                    type: 'GET',
+                    success: function(data) {
+                        $('#deleteReviewModal .modal-content').html(data);
+                    }
+                });
+            });
+            
+        });
+    </script>
 {% endblock %}
