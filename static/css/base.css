@@ -147,8 +147,8 @@ p {
     100% { border-color: red; }
 }
   
-.border-bottom-rainbow {
-    border-bottom: 2px solid transparent;
+.border-top-rainbow {
+    border-top: 4px solid transparent;
     animation: rainbow 6s linear infinite; /* 6s for a complete cycle */
 }
 

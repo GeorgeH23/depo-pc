@@ -139,7 +139,7 @@
             <nav class="navbar navbar-expand-lg navbar-light w-100 shadow-sm d-flex justify-content-center">
                 <div class="d-flex align-items-center">
                     <button class="navbar-toggler" type="button" 
-                        data-toggle="collapse" data-target="#main-nav" 
+                        data-toggle="collapse" data-target=".main-nav" 
                         aria-controls="main-nav" aria-expanded="false" 
                         aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -148,7 +148,7 @@
                 <div class="mx-auto">
                     {% include 'includes/mobile-top-header.html' %}
                 </div>
-                <div class="collapse navbar-collapse" id="main-nav">
+                <div class="collapse navbar-collapse main-nav">
                     {% include 'includes/main-nav.html' %}
                 </div>
             </nav>
@@ -179,93 +179,69 @@
     {% block content %}
     {% endblock %}
 
-    <footer class="text-center font-weight-bold">
-        <section class="d-flex justify-content-center p-4 mt-5 border-bottom-rainbow">
-            <h2 class="me-5">
-                <a class="btn btn-outline-dark font-weight-bold" href="{% url 'subscribe' %}">Subscribe to our Newsletter!</a>
-            </h2>
-        </section>
-        <!-- Footer content -->
-        <section class="">
-            <div class="container text-center text-md-start mt-5">
-                <div class="row mt-3">
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            depo<strong>PC</strong>
-                        </h6>
-                        <p>
-                            <i class="fas fa-home me-3"></i> Limerick, Ireland
-                        </p>
-                        <p>
-                            <i class="fas fa-phone me-3"></i> +353 12 365 4987
-                        </p>
+    <footer class="text-black py-5 justify-content-center border-top-rainbow">
+        <div class="container">
+            <!-- Newsletter Section -->
+            <section class="mb-4 text-center">
+                <h2 class="mb-3">
+                    <a class="btn btn-outline-dark" href="{% url 'subscribe' %}">Subscribe to our Newsletter!</a>
+                </h2>
+            </section>
+    
+            <!-- Footer Content -->
+            <section class="mb-4 justify-content-center">
+                <div class="row text-center">
+                    <!-- depoPC Information -->
+                    <div class="col-md-3 mb-4">
+                        <h3 class="fw-bold mb-3">depo<strong>PC</strong></h3>
+                        <p><i class="fas fa-home me-2"></i> Limerick, Ireland</p>
+                        <p><i class="fas fa-phone me-2"></i> +353 12 365 4987</p>
                     </div>
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Get to Know Us
-                        </h6>
-                        <p>
-                            <a href="{% url 'about' %}" class="text-reset">About Us</a>
-                        </p>
-                        <p>
-                            <a href="{% url 'contact' %}" class="text-reset">Contact Us</a>
-                        </p>
+            
+                    <!-- Get to Know Us -->
+                    <div class="col-md-3 mb-4">
+                        <h3 class="fw-bold mb-3">Get to Know Us</h3>
+                        <p><a href="{% url 'about' %}" class="text-reset">About Us</a></p>
+                        <p><a href="{% url 'contact' %}" class="text-reset">Contact Us</a></p>
                     </div>
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Information Hub
-                        </h6>
-                        <p>
-                            <a href="{% url 't_and_c' %}" class="text-reset">Terms and Conditions</a>
-                        </p>
-                        <p>
-                            <a href="{% url 'privacy' %}" class="text-reset">Privacy Policy</a>
-                        </p>
+            
+                    <!-- Information Hub -->
+                    <div class="col-md-3 mb-4">
+                        <h3 class="fw-bold mb-3">Information Hub</h3>
+                        <p><a href="{% url 't_and_c' %}" class="text-reset">Terms and Conditions</a></p>
+                        <p><a href="{% url 'privacy' %}" class="text-reset">Privacy Policy</a></p>
                     </div>
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <!-- Social Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">Follow Us</h6>
+            
+                    <!-- Follow Us -->
+                    <div class="col-md-3 mb-4">
+                        <h3 class="fw-bold mb-3">Follow Us</h3>
                         <p>
-                            <a href="https://facebook.com" target="_blank"
-                                rel="noopener" class="me-4 text-reset"
-                                aria-label="Facebook page (opens in a new tab)">
+                            <a href="https://facebook.com" target="_blank" rel="noopener" class="me-3 text-reset">
                                 <i class="fab fa-facebook"></i>
                             </a>
-                        </p>
-                        <p>
-                            <a href="https://twitter.com" target="_blank" 
-                                rel="noopener" class="me-4 text-reset"
-                                aria-label="Twitter page (opens in a new tab)">
+                            <a href="https://twitter.com" target="_blank" rel="noopener" class="me-3 text-reset">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                        </p>
-                        <p>
-                            <a href="https://instagram.com" target="_blank" 
-                                rel="noopener" class="me-4 text-reset"
-                                aria-label="Instagram page (opens in a new tab)">
+                            <a href="https://instagram.com" target="_blank" rel="noopener" class="me-3 text-reset">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                        </p>
-                        <p>
-                            <a href="https://youtube.com" target="_blank" 
-                                rel="noopener" class="me-4 text-reset"
-                                aria-label="YouTube page (opens in a new tab)">
+                            <a href="https://youtube.com" target="_blank" rel="noopener" class="me-3 text-reset">
                                 <i class="fab fa-youtube"></i>
                             </a>
                         </p>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Copyright -->
-        <div class="text-center p-4">
-            Project &copy; George Harpa 2024 <a href=""
-                class="me-4 text-reset" target="_blank" aria-label="GitHub">
-                <i class="fab-brands fa-github"></i>
-            </a>
-            <p>Portfolio Project, not a real e-commerce website</p>
-            <p>All products are from amazon opensource data.</p>
+            <!-- Copyright -->
+            <div class="text-center">
+                <p class="mb-3">Project &copy; George Harpa 2024</p>
+                <p>Portfolio Project, not a real e-commerce website</p>
+                <p>All products are from amazon opensource data.</p>
+                <a href="#" class="text-reset me-4" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
         </div>
     </footer>
 
