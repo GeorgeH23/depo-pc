@@ -93,6 +93,10 @@ p {
     height: calc(100vh - 164px);
 }
 
+.bg-black-opacity {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
 /* --- Error Pages --- */
 .error-box {
     margin: auto;

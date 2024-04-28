@@ -12,7 +12,7 @@
 
 {% block content %}
     <!-- Carousel slides -->
-    <div id="carouselId" class="carousel slide carousel-fade" data-ride="carousel">
+    <div id="carouselId" class="carousel slide carousel-fade shadow-sm" data-ride="carousel">
         <ol class="carousel-indicators">
             {% for caption in captions %}
                 <li data-target="#carouselId" data-slide-to="{{ caption.index|add:'-1' }}" {% if caption.index == 1 %}class="active"{% endif %}></li>
@@ -29,7 +29,7 @@
                                         {{ caption.title }}
                                     </h1>
                                     <h2>
-                                        <a class="shop-now-button btn-outline-black btn btn-lg rounded-5 text-uppercase font-weight-bold py-2">Shop Now</a>
+                                        <a href="{% url 'products' %}" class="shop-now-button btn-outline-black btn btn-lg rounded-5 text-uppercase font-weight-bold py-2">Shop Now</a>
                                     </h2>
                                 </div>
                             </div>
@@ -48,16 +48,102 @@
         </div>
     </div>
 
-    <div class="container h-100-calc">
-        <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 text-black">
-                    Welcome to depo<strong>PC</strong> - Your Destination for Cutting-Edge Technology!
-                </h1>
-                <div class="my-5">
-                    <h4>
-                        <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
-                    </h4>
+    <!-- Top Categories -->
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="home-content col-12">
+                <h2 class="text-center mb-4 font-weight-bold">Top Categories</h2>
+                <div class="container">
+                    <div class="row">
+                        <!-- Category Tile 1 -->
+                        <div class="col-6 col-md-4 col-lg-3 mb-4">
+                            <a href="{% url 'products' %}?category=monitors" class="card-link">
+                                <div class="card bg-black-opacity rounded shadow d-flex flex-column align-items-center justify-content-center my-4">
+                                    <i class="fas fa-desktop fa-4x text-white mt-3 mb-3"></i>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title text-white">Monitors</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Category Tile 2 -->
+                        <div class="col-6 col-md-4 col-lg-3 mb-4">
+                            <a href="{% url 'products' %}?category=laptops" class="card-link">
+                                <div class="card bg-black-opacity rounded shadow d-flex flex-column align-items-center justify-content-center my-4">
+                                    <i class="fas fa-laptop fa-4x text-white mt-3 mb-3"></i>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title text-white">Laptops</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Category Tile 3 -->
+                        <div class="col-6 col-md-4 col-lg-3 mb-4">
+                            <a href="{% url 'products' %}?category=tablets" class="card-link">
+                                <div class="card bg-black-opacity rounded shadow d-flex flex-column align-items-center justify-content-center my-4">
+                                    <i class="fas fa-tablet-alt fa-4x text-white mt-3 mb-3"></i>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title text-white">Tablets</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Category Tile 4 -->
+                        <div class="col-6 col-md-4 col-lg-3 mb-4">
+                            <a href="{% url 'products' %}?category=components" class="card-link">
+                                <div class="card bg-black-opacity rounded shadow d-flex flex-column align-items-center justify-content-center my-4">
+                                    <i class="fas fa-cogs fa-4x text-white mt-3 mb-3"></i>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title text-white">Components</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Category Tile 5 -->
+                        <div class="col-6 col-md-4 col-lg-3 mb-4">
+                            <a href="{% url 'products' %}?category=consoles" class="card-link">
+                                <div class="card bg-black-opacity rounded shadow d-flex flex-column align-items-center justify-content-center my-4">
+                                    <i class="fas fa-gamepad fa-4x text-white mt-3 mb-3"></i>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title text-white">Consoles</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Category Tile 6 -->
+                        <div class="col-6 col-md-4 col-lg-3 mb-4">
+                            <a href="{% url 'products' %}?category=games" class="card-link">
+                                <div class="card bg-black-opacity rounded shadow d-flex flex-column align-items-center justify-content-center my-4">
+                                    <i class="fas fa-chess fa-4x text-white mt-3 mb-3"></i>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title text-white">Games</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Category Tile 7 -->
+                        <div class="col-6 col-md-4 col-lg-3 mb-4">
+                            <a href="{% url 'products' %}?category=accessories" class="card-link">
+                                <div class="card bg-black-opacity rounded shadow d-flex flex-column align-items-center justify-content-center my-4">
+                                    <i class="fas fa-headphones fa-4x text-white mt-3 mb-3"></i>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title text-white">Accessories</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Category Tile 8 -->
+                        <div class="col-6 col-md-4 col-lg-3 mb-4">
+                            <a href="{% url 'products' %}?category=news,deals,clearance" class="card-link">
+                                <div class="card bg-black-opacity rounded shadow d-flex flex-column align-items-center justify-content-center my-4">
+                                    <i class="fas fa-tags fa-4x text-white mt-3 mb-3"></i>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title text-white">Offers</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
