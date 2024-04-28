@@ -11,17 +11,13 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container-fluid">
-        <div class="row justify-content-center mt-3">
-            <div class="col-12 col-md-6 offset-lg-2 mt-5">
-                <div class="col-8">
-                    <a class="error-img" href="{% url 'home' %}">
-                        <img src="{% static 'img/404.png' %}" alt="Home Link">
-                    </a>
-                    <h3>Ooops! Page does not exist...</h3>
-                    <a href="{% url 'home' %}" class="btn btn-outline-black rounded-0 mt-5">Return to Safety</a>
-                </div>
-            </div>
+    <div class="d-flex align-items-center justify-content-center h-100-calc">
+        <div class="text-center">
+            <a class="error-img" href="{% url 'home' %}">
+                <img src="{% static 'img/404.png' %}" alt="Home Link">
+            </a>
+            <h3>Ooops! Page does not exist...</h3>
+            <a href="{% url 'home' %}" class="btn btn-outline-black rounded-0 mt-5">Return to Safety</a>
         </div>
     </div>
 {% endblock %}
