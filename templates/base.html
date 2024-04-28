@@ -54,7 +54,14 @@
   </head>
 
   <body>
-    <header class="container-fluid fixed-top">
+    <header class="container-fluid fixed-top border-nav">
+        <div id="delivery-banner" class="row text-center shadow-sm">
+            <div class="col bg-black text-white">
+                <h4 class="logo-font my-1">
+                    Free delivery on orders over ${{ free_delivery_threshold }}!
+                </h4>                
+            </div>            
+        </div>
         <div class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
@@ -127,23 +134,22 @@
             </div>
         </div>
         <div class="row bg-white">
-            <nav class="navbar navbar-expand-lg navbar-light w-100">
-                <button class="navbar-toggler" type="button" 
-                    data-toggle="collapse" data-target="#main-nav" 
-                    aria-controls="main-nav" aria-expanded="false" 
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                {% include 'includes/mobile-top-header.html' %}
-                {% include 'includes/main-nav.html' %}
+            <nav class="navbar navbar-expand-lg navbar-light w-100 shadow-sm d-flex justify-content-center">
+                <div class="d-flex align-items-center">
+                    <button class="navbar-toggler" type="button" 
+                        data-toggle="collapse" data-target="#main-nav" 
+                        aria-controls="main-nav" aria-expanded="false" 
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="mx-auto">
+                    {% include 'includes/mobile-top-header.html' %}
+                </div>
+                <div class="collapse navbar-collapse" id="main-nav">
+                    {% include 'includes/main-nav.html' %}
+                </div>
             </nav>
-        </div>
-        <div id="delivery-banner" class="row text-center">
-            <div class="col bg-black text-white">
-                <h4 class="logo-font my-1">
-                    Free delivery on orders over ${{ free_delivery_threshold }}!
-                </h4>                
-            </div>            
         </div>
     </header>
 
