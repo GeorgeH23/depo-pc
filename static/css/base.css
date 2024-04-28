@@ -39,8 +39,24 @@ p {
     text-align: center;
 }
 
-.card {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.card-shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.cards-img {
+    height: 300px; 
+}
+
+.products-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.products-heart {
+    border: none; 
+    background: none; 
+    font-size: 1.5rem;
 }
 
 .sm-divider {
@@ -150,6 +166,7 @@ p {
 .border-top-rainbow {
     border-top: 4px solid transparent;
     animation: rainbow 6s linear infinite; /* 6s for a complete cycle */
+    margin-top: 2rem;
 }
 
 /* from Bulma */
@@ -439,6 +456,9 @@ a.category-badge>span.badge:hover {
 
     .img-fluid {
         max-width: 70%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .h-100-calc {
