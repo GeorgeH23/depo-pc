@@ -11,16 +11,15 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container page-margins">
-        <div class="row error-box extra-p-btm">
-            <div class="col-12">
-                <a class="error-img" href="{% url 'home' %}">
+    <div class="container-fluid">
+        <div class="row justify-content-center mt-3">
+            <div class="col-12 col-md-6 offset-lg-2 mt-5">
+                <div class="col-8">
+                    <a class="error-img" href="{% url 'home' %}">
                     <img src="{% static 'img/403.png' %}" alt="Home Link">
                 </a>
-                <p>Sorry, you don't have permission to access this page.</p>
-            </div>
-            <div class="col-12 error-link">
-                <a href="{% url 'home' %}">Return Home</a>
+                <h3>Sorry, you don't have permission to access this page.</h3>
+                <a href="{% url 'home' %}" class="btn btn-outline-black rounded-0 mt-5">Return Home</a>
             </div>
         </div>
     </div>

@@ -11,19 +11,19 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container page-margins">
-        <div class="row error-box extra-p-btm">
-            <div class="col-12">
-                <a class="error-img" href="{% url 'home' %}">
-                    <img src="{% static 'img/500.png' %}" alt="Home Link">
-                </a>
-                <p class="m-0">Sorry, there is an issue with our servers</p>
-                <p>Please try again later.</p>
-                <p class="text-muted m-0">If the problem persists, please contact us via our</p> 
-                <p><strong><a class="pages-link" href="{% url 'contact' %}">Contact Page</a></strong>.</p>
-            </div>
-            <div class="col-12 error-link">
-                <a href="{% url 'home' %}">Return to Home</a>
+    <div class="container-fluid">
+        <div class="row justify-content-center mt-3">
+            <div class="col-12 col-md-6 offset-lg-2 mt-5">
+                <div class="col-8">
+                    <a class="error-img" href="{% url 'home' %}">
+                        <img src="{% static 'img/500.png' %}" alt="Home Link">
+                    </a>
+                </div>
+                <h2 class="m-0">Sorry, there is an issue with our servers</h2>
+                <h2>Please try again later.</h2>
+                <h3 class="text-muted mb-1">If the problem persists, please contact us via our</h3> 
+                <p><strong><a class="btn btn-black rounded-0" href="{% url 'contact' %}">Contact Page</a></strong>.</p>
+                <a href="{% url 'home' %}" class="btn btn-outline-black rounded-0 mt-5">Return to Home</a>
             </div>
         </div>    
     </div>

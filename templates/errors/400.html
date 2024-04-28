@@ -11,16 +11,15 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container page-margins">
-        <div class="row error-box extra-p-btm">
-            <div class="col-12">
-                <a class="error-img" href="{% url 'home' %}">
+    <div class="container-fluid">
+        <div class="row justify-content-center mt-3">
+            <div class="col-12 col-md-6 offset-lg-2 mt-5">
+                <div class="col-8">
+                    <a class="error-img" href="{% url 'home' %}">
                     <img src="{% static 'img/400.png' %}" alt="Home Link">
                 </a>
-                <p>Your browser sent a request that the server couldn't understand. Please contact us for assistance.</p>
-            </div>
-            <div class="col-12 error-link">
-                <a href="{% url 'home' %}">Return to Home</a>
+                <h3>Your browser sent a request that the server couldn't understand. Please contact us for assistance.</h3>
+                <a href="{% url 'home' %}" class="btn btn-outline-black rounded-0 mt-5">Return to Home</a>
             </div>
         </div>
     </div>
