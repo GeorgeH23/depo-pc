@@ -11,10 +11,47 @@
 {% endblock %}
 
 {% block content %}
+    <!-- Carousel slides -->
+    <div id="carouselId" class="carousel slide carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators">
+            {% for caption in captions %}
+                <li data-target="#carouselId" data-slide-to="{{ caption.index|add:'-1' }}" {% if caption.index == 1 %}class="active"{% endif %}></li>
+            {% endfor %}
+        </ol>
+        <div class="carousel-inner">
+            {% for caption in captions %}
+                <div class="carousel-item {% if caption.index == 1 %}active{% endif %} carousel-img{{ caption.index }}">
+                    <div class="carousel-caption d-md-block adjusted-pad{{ caption.index }}">
+                        <div class="container h-100">
+                            <div class="row h-100">
+                                <div class="col-md-6 offset-md-0 intro-items">
+                                    <h1 class="display-5 logo-font text-white">
+                                        {{ caption.title }}
+                                    </h1>
+                                    <h2>
+                                        <a class="shop-now-button btn-outline-black btn btn-lg rounded-5 text-uppercase font-weight-bold py-2">Shop Now</a>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <button class="carousel-control-prev" type="button" data-target="#carouselId" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-target="#carouselId" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </button>
+        </div>
+    </div>
+
     <div class="container h-100-calc">
         <div class="row h-100">
             <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 logo-font text-black">
+                <h1 class="display-4 text-black">
                     Welcome to depo<strong>PC</strong> - Your Destination for Cutting-Edge Technology!
                 </h1>
                 <div class="my-5">

@@ -75,6 +75,24 @@ p {
     z-index: -1;
 }
 
+.carousel-img1 {
+    background: url('/static/img/carousel-img1.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+}
+
+.carousel-img2 {
+    background: url('/static/img/carousel-img2.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+}
+
+.carousel-img3 {
+    background: url('/static/img/carousel-img3.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+}
+
 /* --- Error Pages --- */
 .error-box {
     margin: auto;
@@ -437,6 +455,7 @@ a.category-badge>span.badge:hover {
         padding-top: 10px;
         font-size: 0.8rem;
     }
+
 }
 
 @media (max-width: 330px) {
