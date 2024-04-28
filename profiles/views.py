@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-
+from django.contrib.auth.models import User
 from .models import UserProfile
 from .forms import UserProfileForm
 
@@ -22,7 +22,9 @@ def profile(request):
             messages.error(request, 'Update failed. Please ensure the form is valid.')
     else:
         form = UserProfileForm(instance=profile)
-    orders = profile.orders.all()
+
+    user_email = request.user.email
+    orders = Order.objects.filter(email=user_email).order_by('email')
 
     template = 'profiles/profile.html'
     context = {
