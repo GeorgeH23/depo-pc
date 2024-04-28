@@ -241,6 +241,7 @@ def add_review(request, product_id):
             review.product = product
             review.user = request.user
             review.save()
+            messages.success(request, 'Review added!')
             return redirect('product_detail', product_id=product_id)
     else:
         form = ReviewForm()
