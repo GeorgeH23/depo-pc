@@ -113,6 +113,16 @@ p {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+hr {
+    background-color: #969899;
+}
+
+.review-section {
+    background: url(../../media/background-home.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 /* --- Error Pages --- */
 .error-box {
     margin: auto;
