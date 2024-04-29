@@ -81,6 +81,18 @@ p {
     z-index: -1;
 }
 
+.landing-fav {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: url(../../media/background-home.jpeg) no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: 0.2;
+}
+
 .overlay {
     height: 100%;
     width: 100%;

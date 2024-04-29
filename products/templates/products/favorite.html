@@ -3,6 +3,7 @@
 {% load cart_tools %}
 
 {% block page_header %}
+<div class="landing-fav"></div>
     <div class="container header-container">
         <div class="row">
             <div class="col"></div>
@@ -15,65 +16,167 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font">Favorite</h2>
+                <h2 class="logo-font text-center mb-4 font-weight-bold mt-3">Favorites</h2>
             </div>
         </div>
-        <div class="row" id="favorite-list">
+        <div class="row container-fluid" id="favorite-list">
             {% for favorite_item in f %}
                 {% for product in favorite_item.products.all %}
-                    <div class="col-md-6 mb-4">
-                        <div class="card h-100 border-0">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    {% if product.image %}
-                                        <a href="{% url 'product_detail' product.id %}">
-                                            <img class="card-img-top img-fluid rounded-start" src="{{ product.image }}" alt="{{ product.name }}" style="max-width: 150px;">
-                                        </a>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-md-4 mt-3">
+                                {% if product.image %}
+                                    <a href="{% url 'product_detail' product.id %}">
+                                        <img class="card-img-top img-fluid rounded-start" src="{{ product.image }}" alt="{{ product.name }}" style="max-width: 200px;">
+                                    </a>
+                                {% else %}
+                                    <a href="{% url 'product_detail' product.id %}">
+                                        <img class="card-img-top img-fluid rounded-start" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}" style="max-width: 200px;">
+                                    </a>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.name }}</h5>
+                                    <p class="card-text">${{ product.price }}</p>
+                                    {% if product.category %}
+                                        <p class="card-text"><small class="text-muted">{{ product.category.friendly_name }}</small></p>
+                                    {% endif %}
+                                    {% if product.stars %}
+                                        <p class="card-text"><small class="text-muted">{{ product.stars }} / 5</small></p>
                                     {% else %}
-                                        <a href="{% url 'product_detail' product.id %}">
-                                            <img class="card-img-top img-fluid rounded-start" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}" style="max-width: 150px;">
-                                        </a>
+                                        <p class="card-text"><small class="text-muted">No Rating</small></p>
                                     {% endif %}
                                 </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ product.name }}</h5>
-                                        <p class="card-text">${{ product.price }}</p>
-                                        {% if product.category %}
-                                            <p class="card-text"><small class="text-muted">{{ product.category.friendly_name }}</small></p>
-                                        {% endif %}
-                                        {% if product.stars %}
-                                            <p class="card-text"><small class="text-muted">{{ product.stars }} / 5</small></p>
-                                        {% else %}
-                                            <p class="card-text"><small class="text-muted">No Rating</small></p>
-                                        {% endif %}
+                                <div class="card-footer text-right">
+                                    <form class="form"  action="{% url 'remove-from-favorite' product.id %}" method="POST" style="display: inline;">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="id" value="{{ product.id }}">
+                                        <input type="hidden" name="redirect_url" value="{{ redirect_url }}">
+                                        <button type="submit" class="delete-favorite-product btn-outline-black btn btn-sm rounded-5 font-weight-bold" data-favorite-product="{{ product.id }}">
+                                            <i class="fa fa-trash" aria-hidden="true"></i> 
+                                        </button>
+                                    </form> 
+                                    <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST" style="display: inline;">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                        <button type="submit" class="btn-outline-black btn btn-sm rounded-5 text-uppercase font-weight-bold">Add to Bag</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% endfor %}
+            {% if f is None %}
+                <div class="col text-center">
+                    <p>Your Favorites list is empty...</p>
+                </div>
+            {% else %}
+                <div class="container-fluid mt-5">
+                    <div class="row">
+                        <div class="home-content col-12">
+                            <h3 class="text-center mb-4 font-weight-bold">Top Categories</h3>
+                            <div class="container">
+                                <div class="row">
+                                    <!-- Category Tile 1 -->
+                                    <div class="col-6 col-md-2 col-lg-2 mb-4">
+                                        <!-- Adjusted card size -->
+                                        <a href="{% url 'products' %}?category=monitors" class="card-link">
+                                            <div class="card bg-black-opacity rounded shadow d-flex flex-column align-items-center justify-content-center my-4">
+                                                <i class="fas fa-desktop fa-2x text-white mt-3 mb-3"></i> <!-- Adjusted icon size -->
+                                                <div class="card-body text-center">
+                                                    <h5 class="card-title text-white">Monitors</h5>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div class="card-footer">
-                                        <form class="form"  action="{% url 'remove-from-favorite' product.id %}" method="POST" style="display: inline;">
-                                            {% csrf_token %}
-                                            <input type="hidden" name="id" value="{{ product.id }}">
-                                            <input type="hidden" name="redirect_url" value="{{ redirect_url }}">
-                                            <button type="submit" style="border: none; background: none; margin-left: 50%; font-size: 1.5rem;" class="delete-favorite-product" data-favorite-product="{{ product.id }}">
-                                                <i class="fa fa-trash" aria-hidden="true"></i> 
-                                            </button>
-                                        </form> 
-                                        <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST" style="display: inline;">
-                                            {% csrf_token %}
-                                            <input type="hidden" name="quantity" value="1">
-                                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                            <button type="submit" class="btn btn-primary">Add to Bag</button>
-                                        </form>
+                                    <!-- Category Tile 2 -->
+                                    <div class="col-6 col-md-2 col-lg-2 mb-4">
+                                        <a href="{% url 'products' %}?category=laptops" class="card-link">
+                                            <div class="card bg-black-opacity rounded shadow d-flex flex-column align-items-center justify-content-center my-4">
+                                                <i class="fas fa-laptop fa-2x text-white mt-3 mb-3"></i>
+                                                <div class="card-body text-center">
+                                                    <h5 class="card-title text-white">Laptops</h5>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <!-- Category Tile 3 -->
+                                    <div class="col-6 col-md-2 col-lg-2 mb-4">
+                                        <a href="{% url 'products' %}?category=tablets" class="card-link">
+                                            <div class="card bg-black-opacity rounded shadow d-flex flex-column align-items-center justify-content-center my-4">
+                                                <i class="fas fa-tablet-alt fa-2x text-white mt-3 mb-3"></i>
+                                                <div class="card-body text-center">
+                                                    <h5 class="card-title text-white">Tablets</h5>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <!-- Category Tile 4 -->
+                                    <div class="col-6 col-md-2 col-lg-2 mb-4">
+                                        <a href="{% url 'products' %}?category=components" class="card-link">
+                                            <div class="card bg-black-opacity rounded shadow d-flex flex-column align-items-center justify-content-center my-4">
+                                                <i class="fas fa-cogs fa-2x text-white mt-3 mb-3"></i>
+                                                <div class="card-body text-center">
+                                                    <h5 class="card-title text-white">Components</h5>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <!-- Category Tile 5 -->
+                                    <div class="col-6 col-md-2 col-lg-2 mb-4">
+                                        <a href="{% url 'products' %}?category=consoles" class="card-link">
+                                            <div class="card bg-black-opacity rounded shadow d-flex flex-column align-items-center justify-content-center my-4">
+                                                <i class="fas fa-gamepad fa-2x text-white mt-3 mb-3"></i>
+                                                <div class="card-body text-center">
+                                                    <h5 class="card-title text-white">Consoles</h5>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <!-- Category Tile 6 -->
+                                    <div class="col-6 col-md-2 col-lg-2 mb-4">
+                                        <a href="{% url 'products' %}?category=games" class="card-link">
+                                            <div class="card bg-black-opacity rounded shadow d-flex flex-column align-items-center justify-content-center my-4">
+                                                <i class="fas fa-chess fa-2x text-white mt-3 mb-3"></i>
+                                                <div class="card-body text-center">
+                                                    <h5 class="card-title text-white">Games</h5>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <!-- Category Tile 7 -->
+                                    <div class="col-6 col-md-2 col-lg-2 mb-4">
+                                        <a href="{% url 'products' %}?category=accessories" class="card-link">
+                                            <div class="card bg-black-opacity rounded shadow d-flex flex-column align-items-center justify-content-center my-4">
+                                                <i class="fas fa-headphones fa-2x text-white mt-3 mb-3"></i>
+                                                <div class="card-body text-center">
+                                                    <h5 class="card-title text-white">Accessories</h5>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <!-- Category Tile 8 -->
+                                    <div class="col-6 col-md-2 col-lg-2 mb-4">
+                                        <a href="{% url 'products' %}?category=news,deals,clearance" class="card-link">
+                                            <div class="card bg-black-opacity rounded shadow d-flex flex-column align-items-center justify-content-center my-4">
+                                                <i class="fas fa-tags fa-2x text-white mt-3 mb-3"></i>
+                                                <div class="card-body text-center">
+                                                    <h5 class="card-title text-white">Offers</h5>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                {% endfor %}
-            {% empty %}
-                <div class="col">
-                    <p>Your Favorites list is empty...</p>
                 </div>
-            {% endfor %}
+            {% endif %}
         </div>
     </div>
 {% endblock %}
