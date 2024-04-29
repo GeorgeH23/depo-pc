@@ -4,7 +4,7 @@ Welcome to Depo PC: Your Ultimate Computer Hardware Haven!
 
 Depo PC is your one-stop destination for all things computer hardware. Dive into a world where cutting-edge technology meets seamless e-commerce, offering a curated selection of top-notch components, peripherals, and accessories. Our platform is designed to cater to tech enthusiasts, gamers, and professionals alike, providing a hassle-free shopping experience for all your computing needs.
 
-![Responsive website image](readme_assets/images/responsive.png)
+![Responsive website image](readme_assets/images/responsive-1.png)
 
 Visit the live site - [depo PC](https://depo-pc-1fa940aecc2f.herokuapp.com/ "Link to depo PC")
 
@@ -54,7 +54,7 @@ Visit the live site - [depo PC](https://depo-pc-1fa940aecc2f.herokuapp.com/ "Lin
 Explore a diverse catalog of top-tier computer hardware, from CPUs and GPUs to gaming peripherals. Benefit from expert reviews, detailed product descriptions, and insightful buying guides for informed decisions. Enjoy a user-friendly interface that guarantees a smooth and enjoyable shopping journey. Shop with confidence, knowing that every transaction is secure, and your personal information is handled with care.
 
 **Admin**
-- db-admin: user: george and pass: password
+
 
 **Note for testing the checkout functionality:**
 
@@ -521,7 +521,7 @@ The [HTML W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_opt
 
 ![Index](readme_assets/images/tests/html/html-index.png)
 
- - Paintings
+ - Products
  <br>
 
 ![Products](readme_assets/images/tests/html/html-products.png)

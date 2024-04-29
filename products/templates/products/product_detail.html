@@ -221,6 +221,7 @@
                             <div class="modal-body">
                                 <form id="editReviewForm" method="POST" action="">
                                     {% csrf_token %}
+                                    {{ form | crispy }}
                                     <div class="form-group">
                                         <label for="edit-comment">Edit Comment:</label>
                                         <textarea class="form-control" id="edit-comment" name="comment" rows="3"></textarea>

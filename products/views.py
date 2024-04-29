@@ -10,6 +10,7 @@ from .forms import ProductForm, ReviewForm
 
 # Create your views here.
 
+
 def all_products(request):
     """ A view to return all products page """
 
@@ -28,7 +29,7 @@ def all_products(request):
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
-            
+
             if sortkey == 'category':
                 sortkey = 'category__name'
 
@@ -46,7 +47,9 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criterial!")
+                messages.error(
+                    request,
+                    "You didn't enter any search criterial!")
                 return redirect(reverse('products'))
 
             queries = Q(name__icontains=query) | Q(description__icontains=query)
@@ -57,7 +60,7 @@ def all_products(request):
         if favorite_instance:
             favorite_products = favorite_instance.products.all()
             favorite_ids = [product.id for product in favorite_products]
-    
+
     redirect_url = request.POST.get('redirect_url')
 
     current_sorting = f'{sort}_{direction}'
@@ -88,7 +91,7 @@ def product_detail(request, product_id):
         if favorite_instance:
             favorite_products = favorite_instance.products.all()
             favorite_ids = [product.id for product in favorite_products]
-    
+
     form = ReviewForm()
 
     # Paginator
@@ -107,7 +110,7 @@ def product_detail(request, product_id):
         'product_in_favorites': favorite_ids,
         'redirect_url': redirect_url,
         'reviews': reviews,
-        'form': form, 
+        'form': form,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -128,10 +131,12 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to add product. Please ensure the form is valid.')
     else:
         form = ProductForm()
-        
+
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -155,7 +160,9 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to update product. Please ensure the form is valid.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -175,7 +182,7 @@ def delete_product(request, product_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
- 
+
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Product deleted!')
@@ -233,7 +240,7 @@ def remove_from_favorite(request, product_id):
 def add_review(request, product_id):
     product = Product.objects.get(id=product_id)
     rating_choices = Review.RATING
-    
+
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
@@ -245,9 +252,9 @@ def add_review(request, product_id):
             return redirect('product_detail', product_id=product_id)
     else:
         form = ReviewForm()
-    
+
     context = {
-        'form': form, 
+        'form': form,
         'product': product,
         'review_rating': rating_choices,
     }
@@ -259,7 +266,7 @@ def add_review(request, product_id):
 def edit_review(request, review_id):
     review = get_object_or_404(Review, id=review_id)
     if request.user != review.user:
-        return HttpResponseForbidden("You are not authorized to edit this review.")
+        return HttpResponseForbidden("You are not authorized to edit.")
 
     if request.method == 'POST':
         form = ReviewForm(request.POST, instance=review)
@@ -283,13 +290,13 @@ def delete_review(request, review_id):
     review = get_object_or_404(Review, id=review_id)
 
     if request.user != review.user and not request.user.is_superuser:
-        return HttpResponseForbidden("You are not authorized to delete this review.")   
+        return HttpResponseForbidden("You are not authorized to delete.")
 
     if request.method == 'POST':
         review.delete()
         messages.success(request, 'Review deleted!')
         return redirect('product_detail', product_id=review.product.id)
-    
+
     print(review_id)
 
     context = {

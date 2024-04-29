@@ -2,9 +2,10 @@ from django.shortcuts import render
 
 # Create your views here.
 
+
 def index(request):
     """ A view to return the index page """
-    num_items = 3 
+    num_items = 3
     captions = [
         {'title': 'Desktop PCs'},
         {'title': 'Laptops'},
