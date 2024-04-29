@@ -200,8 +200,13 @@ But we don't stop there. Our newsletter subscription, powered by MailChimp, keep
 ## **Design**
 
 ### **Color Scheme**
+- The color palette used in the website:
+  - Primary Color: white;
+  - Secundary Color: black.
+  - Button Colors: gray, red, green.
+  - Text Color: #000000, #FFFFFF.
 
-### **Imagery**
+![Palette Color](readme_assets/images/palette-color.png)
 
 ### **Structure**
 
@@ -399,9 +404,8 @@ Please refer to [TESTING.md](/TESTING.md) for more information about responsiven
 The following features could be added to CAG in the future. Project deadline influenced heavily what was left out.
 
   - Add Social sign-in options (Google, GitHub, Facebook)
-  - Add wishlist feature
   - Add AI powered Recommendation
-  - Add interactiv Forul
+  - Add interactiv Forum
 
 [Back to top ⇧](#depo-PC)
 

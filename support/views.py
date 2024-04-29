@@ -45,7 +45,7 @@ def contact(request):
             contact_reason = form.cleaned_data['contact_reason']
 
             # Create an email subject
-            subject = f'Cvek Art Gallery - contact about {contact_reason}'
+            subject = f'depoPC - contact about {contact_reason}'
 
             # Render the email message using a template
             message = render_to_string(
