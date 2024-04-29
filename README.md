@@ -516,35 +516,130 @@ The [HTML W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_opt
 <details>
 <summary>HTML Validation:</summary>
 
- - Index
+ - About
  <br>
 
-![Index](readme_assets/images/tests/html/html-index.png)
+![About](readme_assets/images/tests/validator/html/html-about.png)
 
- - Products
+ - Add Review
  <br>
 
-![Products](readme_assets/images/tests/html/html-products.png)
+![Add Review](readme_assets/images/tests/validator/html/html-add-review.png)
 
- - Painting detail
+ - Products By Category
  <br>
 
-![Product details](readme_assets/images/tests/html/html-product-details.png)
+![Products By Category](readme_assets/images/tests/validator/html/html-by-category.png)
+
+ - Products By Price
+<br>
+
+![Products By Price](readme_assets/images/tests/validator/html/html-by-price.png)
+
+ - Products By Rating
+ <br>
+
+![Products By Rating](readme_assets/images/tests/validator/html/html-by-rating.png)
 
  - Cart
  <br>
 
-![Cart](readme_assets/images/tests/html/html-cart.png)
+![Cart](readme_assets/images/tests/validator/html/html-cart.png)
+
+ - Checkout Success
+ <br>
+
+![Checkout Success](readme_assets/images/tests/validator/html/html-checkout-success.png)
 
  - Checkout
  <br>
 
-![Checkout](readme_assets/images/tests/html/html-checkout.png)
+![Checkout](readme_assets/images/tests/validator/html/html-checkout.png)
 
- - Checkout success
+ - Contact Us
  <br>
 
-I test the importent ones, rest are the same.
+![Contact Us](readme_assets/images/tests/validator/html/html-contact-us.png)
+
+ - Favorite Remove
+ <br>
+
+![Favorite Remove](readme_assets/images/tests/validator/html/html-favorite-remove.png)
+
+ - Favorite
+ <br>
+
+![Favorite](readme_assets/images/tests/validator/html/html-favorite.png)
+
+ - Index
+ <br>
+
+![Index](readme_assets/images/tests/validator/html/html-index.png)
+
+ - Laptops
+ <br>
+
+![Laptops](readme_assets/images/tests/validator/html/html-laptops.png)
+
+ - Login
+ <br>
+
+![Login](readme_assets/images/tests/validator/html/html-login.png)
+
+ - Logout
+ <br>
+
+![Logout](readme_assets/images/tests/validator/html/html-logout.png)
+
+ - Monitor
+ <br>
+
+![Monitor](readme_assets/images/tests/validator/html/html-monitor.png)
+
+ - Order History
+ <br>
+
+![Order History](readme_assets/images/tests/validator/html/html-order-history.png)
+
+ - Privacy
+ <br>
+
+![Privacy](readme_assets/images/tests/validator/html/html-privacy.png)
+
+ - Product
+ <br>
+
+![Product](readme_assets/images/tests/validator/html/html-product.png)
+
+ - Products Add
+ <br>
+
+![Products Add](readme_assets/images/tests/validator/html/html-products-add.png)
+
+ - Products Edit
+ <br>
+
+![Products Edit](readme_assets/images/tests/validator/html/html-products-edit.png)
+
+ - Products
+ <br>
+
+![Products](readme_assets/images/tests/validator/html/html-products.png)
+
+ - Profile
+ <br>
+
+![Profile](readme_assets/images/tests/validator/html/html-profile.png)
+
+ - Subscribe
+ <br>
+
+![Subscribe](readme_assets/images/tests/validator/html/html-subscribe.png)
+
+ - T and C
+ <br>
+
+![T and C](readme_assets/images/tests/validator/html/html-t-and-c.png)
 
 </details>
 
@@ -555,7 +650,10 @@ The [CSS Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_
 <details>
 <summary>CSS Validation:</summary>
 
-![CSS Validator](readme_assets/images/tests/css-base.png.png)
+ - Base css
+ <br>
+
+![CSS Validator](readme_assets/images/tests/validator/css/css-base.png)
 
 </details>
 
@@ -568,7 +666,54 @@ The [JsHint](https://jshint.com/) was used to validate the Javascript code used,
 <details>
 <summary>Javascript Validation:</summary>
 
-![Javascript Validator](readme_assets/images/tests/js.png)
+ - Stripe
+ <br>
+
+![Javascript Validator](readme_assets/images/tests/validator/js/js-stripe-elem.png)
+
+ - Favorite
+ <br>
+
+![Javascript Validator](readme_assets/images/tests/validator/js/js-favorite.png)
+
+</details>
+
+### **CI Python Linter**
+
+The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the Python code used, showing no errors.
+
+<details>
+<summary>Python Validation:</summary>
+
+ - Cart
+ <br>
+
+![Python Validator](readme_assets/images/tests/validator/python/py-cart.png)
+
+ - Checkout
+ <br>
+
+![Python Validator](readme_assets/images/tests/validator/python/py-checkout.png)
+
+ - Home
+ <br>
+
+![Python Validator](readme_assets/images/tests/validator/python/py-home.png)
+
+ - Products
+ <br>
+
+![Python Validator](readme_assets/images/tests/validator/python/py-products.png)
+
+ - Profile
+ <br>
+
+![Python Validator](readme_assets/images/tests/validator/python/py-profile.png)
+
+ - Support
+ <br>
+
+![Python Validator](readme_assets/images/tests/validator/python/py-support.png)
 
 </details>
 
