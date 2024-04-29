@@ -4,7 +4,9 @@
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col"></div>
+        <div class="col">
+            <h1 class="text-white">About Us</h1>
+        </div>
     </div>
 </div>
 {% endblock %}
@@ -12,45 +14,49 @@
 {% block content %}
 <div class="overlay"></div>
 <!-- Content section-->
-<div class="about-pad bg-image-full">
-    <div class="text-center">
-        <h1 class="text-black fs-3 fw-bolder">Welcome to Depo PC</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="text-center mb-5">Welcome to Depo PC</h2>
+            <p class="lead text-center">At Depo PC, we're passionate about technology and dedicated to providing you with the latest gadgets, gaming rigs, and cutting-edge innovations.</p>
+        </div>
     </div>
 </div>
 <hr>
-<section class="py-3">
-    <div class="container my-2">
-        <div class="row justify-content-center">
-            <div class="col-lg-6 d-flex flex-column align-items-center">
-                <h2>Core Team</h2>
-                <p class="lead">At the core of Depo PC is a team of dedicated individuals who live and breathe technology. From gaming rigs to cutting-edge gadgets, we curate a diverse selection that caters to every tech aficionado. Our commitment goes beyond selling – it's about fostering a space where the latest innovations are celebrated, and tech enthusiasts feel at home.
-                </p>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 mb-4">
+            <div class="card bg-dark text-white h-100 d-flex flex-column justify-content-center shadow">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Core Team</h2>
+                    <p class="lead">At the core of Depo PC is a team of dedicated individuals who live and breathe technology. From gaming rigs to cutting-edge gadgets, we curate a diverse selection that caters to every tech aficionado. Our commitment goes beyond selling – it's about fostering a space where the latest innovations are celebrated, and tech enthusiasts feel at home.</p>
+                </div>
             </div>
-            <div class="col-lg-6 d-flex flex-column align-items-center">
-                <h2>depo PC</h2>
-                <p class="lead">where passion for technology meets unrivaled expertise. We're not just an e-commerce platform; we're a community-driven haven for tech enthusiasts.
-                </p>
-            </div>
-            <div class="col-lg-6">
-                <h2>Why choose Depo PC?</h2>
-                <p class="lead">Because we understand the thrill of unboxing a new gadget, the joy of building the perfect setup, and the excitement of being at the forefront of tech trends. We're not just here to sell; we're here to share the excitement of the ever-evolving tech landscape with you.
-                </p>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card bg-dark text-white h-100 d-flex flex-column justify-content-center shadow">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Why Choose Depo PC?</h2>
+                    <p class="lead">Because we understand the thrill of unboxing a new gadget, the joy of building the perfect setup, and the excitement of being at the forefront of tech trends. We're not just here to sell; we're here to share the excitement of the ever-evolving tech landscape with you.</p>
+                </div>
             </div>
         </div>
     </div>
-</section>
+</div>
 
-<!-- Content section-->
-<section class="py-5">
-    <div class="container my-5">
+<div class="bg-secondary py-5">
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-6 d-flex flex-column align-items-center">
-                <h2>Shop With Confidence</h2>
-                <p class="lead">Our Customer Service is at Your Disposal</p>
-                <p class="mb-0">We will do our best to have your shopping experience engaging and up to high standards!
-                </p>
+            <div class="col-md-6 mb-4">
+                <div class="card bg-dark text-white h-100 d-flex flex-column justify-content-center shadow">
+                    <div class="card-body">
+                        <h2 class="text-center mb-4">Shop With Confidence</h2>
+                        <p class="lead text-center">Our Customer Service is at Your Disposal</p>
+                        <p class="text-center">We will do our best to have your shopping experience engaging and up to high standards!</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</section>
+</div>
 {% endblock %}
