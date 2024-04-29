@@ -717,11 +717,46 @@ The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the P
 
 </details>
 
+### **Lighthouse Auditing**
+
+#### Desktop
+| Page | Performance | Accessibility | Best Practice | SEO |
+|------|:-------------:|:---------------:|:---------------:|:-----:|
+| Home Page | 76% | 92% | 100% | 100% |
+| Shop Pages | 69% | 90% | 96% | 100% |
+| Login | 87% | 90% | 100% | 100% |
+| Register | 90% | 91% | 100% | 100% |
+| Contact | 90% | 87% | 100% | 98% |
+| My Profile | 90% | 89% | 100% | 100% |
+| Order History | 85% | 91% | 100% | 100% |
+| Cart | 85% | 80% | 100% | 100% |
+| Checkout Page | 89% | 94% | 100% | 100% |
+| Checkout success Page | 91% | 90% | 94% | 100% |
+
+#### Mobile
+| Page | Performance | Accessibility | Best Practice | SEO |
+|------|:-------------:|:---------------:|:---------------:|:-----:|
+| Home Page | 70% | 92% | 100% | 100% |
+| Shop Pages | 65% | 88% | 96% | 100% |
+| Login | 85% | 90% | 100% | 98% |
+| Register | 90% | 91% | 100% | 100% |
+| Contact | 90% | 84% | 100% | 98% |
+| My Profile | 90% | 89% | 98% | 100% |
+| Order History | 79% | 90% | 100% | 100% |
+| Cart | 85% | 76% | 100% | 100% |
+| Checkout Page | 83% | 91% | 100% | 100% |
+| Checkout success Page | 89% | 90% | 92% | 100% |
+
+- The website performs well overall, there are areas for improvement, particularly in enhancing accessibility and performance on certain pages, especially on mobile devices. Consistency in SEO optimization is observed across all pages. 
+- For future projects will be a good approach to regular monitoring, analysis, and optimization efforts will help to address these areas of improvement and maintain the website's competitiveness in the online landscape.
+
 ---
 
 [Back to top ⇧](#depo-PC)
 
 ---
+
+
 
 ## **Credits**
 
