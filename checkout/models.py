@@ -58,16 +58,6 @@ class Order(models.Model):
         else:
             self.delivery_cost = Decimal('0')
 
-        # Apply discounts based on total sum order
-        if self.order_total >= 1200:
-            self.order_total -= Decimal('100.00')
-            self.discount_applied = True
-        elif self.order_total >= 500:
-            self.order_total -= Decimal('25.00')
-            self.discount_applied = True
-        else:
-            self.discount_applied = False
-
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
 

@@ -15,8 +15,7 @@
     <div class="container mb-2">
         <div class="row">
             <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">Shopping Cart</h2>
+                <h2 class="logo-font mb-4 text-uppercase font-weight-bold mt-5">Shopping Cart</h2>
                 <hr>
             </div>
         </div>
@@ -63,7 +62,7 @@
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <button class="decrement-qty btn btn-sm btn-black rounded-0 decrement-qty_{{ item.product.id }}" 
+                                                        <button class="decrement-qty btn btn-sm btn-black rounded-5 decrement-qty_{{ item.product.id }}" 
                                                             data-item_id="{{ item.product.id }}">
                                                             <span>
                                                                 <i class="fas fa-minus fa-sm"></i>
@@ -80,7 +79,7 @@
                                                         </div>
                                                     {% endif %}
                                                     <div class="input-group-append">
-                                                        <button class="increment-qty btn btn-sm  btn-black rounded-0 increment-qty_{{ item.product.id }}"
+                                                        <button class="increment-qty btn btn-sm btn-black rounded-5 increment-qty_{{ item.product.id }}"
                                                             data-item_id="{{ item.product.id }}" {% if not item.product.in_stock %}style="display: none;"{% endif %}>
                                                             <span>
                                                                 <i class="fas fa-plus fa-sm"></i>
@@ -93,7 +92,9 @@
                                         {% if item.product.in_stock %}
                                             <a class="update-link text-info" href="{% url 'adjust_cart' item.item_id %}"><small></small></a>
                                         {% endif %}
-                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-stock="{{ item.stock }}"><small>Remove</small></a>
+                                        <a class="remove-item text-black float-right btn-outline-danger btn-sm rounded-5" id="remove_{{ item.item_id }}" data-stock="{{ item.stock }}">
+                                            <small><i class="fa fa-trash" aria-hidden="true"></i> </small>
+                                        </a>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
@@ -115,13 +116,13 @@
                             </tr>
                             <tr>
                                 <td colspan="5" class="text-right">
-                                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                    <a href="{% url 'products' %}" class="btn-outline-black btn-lg rounded-5 text-uppercase font-weight-bold mt-5 text-decoration-none">
                                         <span class="icon">
                                             <i class="fas fa-chevron-left"></i>
                                         </span>
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
-                                    <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
+                                    <a href="{% url 'checkout' %}" class="btn-outline-black btn-lg rounded-5 text-uppercase font-weight-bold mt-5 ml-1 text-decoration-none">
                                         <span class="text-uppercase">Secure Checkout</span>
                                         <span class="icon">
                                             <i class="fas fa-lock"></i>
@@ -133,7 +134,7 @@
                    </div>
                 {% else %}
                     <p class="lead mb-5">Your cart is empty.</p>
-                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                    <a href="{% url 'products' %}" class="btn-outline-black btn-lg rounded-5 text-uppercase font-weight-bold mt-5 text-decoration-none">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
                         </span>

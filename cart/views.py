@@ -116,10 +116,3 @@ def remove_cart(request, item_id):
 
     except Exception as e:
         return JsonResponse({'error': 'Error removing item'}, status=500)
-
-    #     request.session['cart'] = cart
-    #     return HttpResponse(status=200)
-
-    # except Exception as e:
-    #     messages.error(request, f'Error removing item: {e}')
-    #     return HttpResponse(status=500)
