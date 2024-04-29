@@ -4,7 +4,10 @@
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col"></div>
+        <div class="col"><h2 class="logo-font mb-4 text-uppercase font-weight-bold mt-5">Contact Us</h2>
+            <hr>
+        </div>
+        
     </div>
 </div>
 {% endblock %}
@@ -17,11 +20,12 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-lg-6">
+                
 
                 <form action="{% url 'contact' %}" method="POST">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <button type="submit" class="btn btn-success text-black">
+                    <button type="submit" class="btn-outline-black btn rounded-5 font-weight-bold mt-5">
                         Send message
                     </button>
                 </form>
