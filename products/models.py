@@ -42,9 +42,6 @@ class Favorite(models.Model):
     class Meta:
         verbose_name_plural = 'favorites'
 
-    def __str__(self):
-        return f'Favorites for {self.user.username}'
-
 
 class Review(models.Model):
     RATING = (
