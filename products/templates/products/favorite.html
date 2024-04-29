@@ -54,7 +54,7 @@
                                         {% csrf_token %}
                                         <input type="hidden" name="id" value="{{ product.id }}">
                                         <input type="hidden" name="redirect_url" value="{{ redirect_url }}">
-                                        <button type="submit" class="delete-favorite-product btn-outline-black btn btn-sm rounded-5 font-weight-bold" data-favorite-product="{{ product.id }}">
+                                        <button type="submit" class="delete-favorite-product btn-outline-black btn btn-sm rounded-5 font-weight-bold mt-1" data-favorite-product="{{ product.id }}">
                                             <i class="fa fa-trash" aria-hidden="true"></i> 
                                         </button>
                                     </form> 
@@ -62,7 +62,7 @@
                                         {% csrf_token %}
                                         <input type="hidden" name="quantity" value="1">
                                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                        <button type="submit" class="btn-outline-black btn btn-sm rounded-5 text-uppercase font-weight-bold">Add to Bag</button>
+                                        <button type="submit" class="btn-outline-black btn btn-sm rounded-5 mt-1 text-uppercase font-weight-bold">Add to Bag</button>
                                     </form>
                                 </div>
                             </div>

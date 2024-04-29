@@ -14,7 +14,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font">Add Review</h2>
+                <h2 class="logo-font mb-4 text-uppercase font-weight-bold mt-5">Add Review</h2>
             </div>
         </div>
         <div class="row">
@@ -24,7 +24,7 @@
                         <form method="post">
                             {% csrf_token %}
                             {{ form | crispy }}
-                            <button type="submit" class="btn btn-primary">Submit Review</button>
+                            <button type="submit" class="btn-black btn rounded-5 text-uppercase font-weight-bold mt-1">Submit Review</button>
                         </form>
                     </div>
                 </div>
