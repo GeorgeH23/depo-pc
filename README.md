@@ -338,17 +338,17 @@ But we don't stop there. Our newsletter subscription, powered by MailChimp, keep
     ]
 
    - *Form Validations:* 
-    -  Login form: validate the username/email and password
+    - Login form: validate the username/email and password
         ![Login Form](readme_assets/images/form-val-login.png)
-    -  Registration form: validate the username/email, password
+    - Registration form: validate the username/email, password
         ![Registration Form](readme_assets/images/form-val-register.png)
-    -  Subscribe form: validate the email address
+    - Subscribe form: validate the email address
         ![Subscribe Form](readme_assets/images/form-val-subscribe.png)
-    -  Checkout form: validate the name, email, phone no, country, city, adress and payment input
+    - Checkout form: validate the name, email, phone no, country, city, adress and payment input
         ![Checkout Form](readme_assets/images/form-val-checkout.png)
-    -  Add Review form: validate the comment and rating
+    - Add Review form: validate the comment and rating
         ![Add Review Form](readme_assets/images/form-val-add-review.png)
-    -  Add Product form: validate the name of product, description and price
+    - Add Product form: validate the name of product, description and price
         ![Add Product Form](readme_assets/images/form-val-prd-manag.png)
 
 
@@ -428,6 +428,22 @@ But we don't stop there. Our newsletter subscription, powered by MailChimp, keep
 | message          | message          | TextField     | max_length=1000                            |
 | date_submitted   | date_submitted   | DateTimeField | auto_now_add=True                         |
 
+   - Favorite model
+
+| Name       | Database Key | Field Type            | Validation                        |
+|------------|--------------|-----------------------|-----------------------------------|
+| user       | user         | ForeignKey to User    | on_delete=models.SET_NULL, null=True |
+| products   | products     | ManyToManyField to Product |                                   |
+
+   - Review model
+
+| Name          | Database Key  | Field Type            | Validation                         |
+|---------------|---------------|-----------------------|------------------------------------|
+| user          | user          | ForeignKey to User    | on_delete=models.CASCADE          |
+| product       | product       | ForeignKey to Product | on_delete=models.CASCADE          |
+| comment       | comment       | TextField             |                                    |
+| review_rating | review_rating | CharField             | max_length=1, null=True, choices=[('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5')] |
+| created_at    | created_at    | DateTimeField         | default=timezone.now              |
 
 
 ## **Agile Project Management**
@@ -477,11 +493,18 @@ But we don't stop there. Our newsletter subscription, powered by MailChimp, keep
 
 **Bugs**
 - BUG: Navigation not working for 'ABOUT' section
+   - This bug was fixed by adding the path of the pages into the navbar.
 - BUG: Emails not working
+   - This bug was fixed by adding a txt file with a different python version then the one from my local.
 - BUG: User with empty list of favorites
+   - Here was a issue with the users that didn't already had a favorites list. The user login and go to the product page, from where is able to add products into the Favorites page. and because there wasn't already a connection between the user and the favorites, an error occurred. 
+   - I have fixed this by adding an if check where I am checking if the user have any favorites. If exist the fetches the associated products and creates a list with ids.
 - BUG: Missing favicon
+   - I have created a favicon for my project and added it to my head element from base.html file
 - BUG: Missing server error pages
+   - I have create custom erros pageas and integrated them in the project
 - BUG: History order display issue
+   - I fixed by ordering the Orders list based on email address, by default was after userprofile. And because the userprofile is null when the user order a product without to be logged in, then the connection between orders is lost.
 ---
 
 [Back to top ⇧](#depo-PC)
