@@ -502,7 +502,7 @@ But we don't stop there. Our newsletter subscription, powered by MailChimp, keep
 - BUG: Missing favicon
    - I have created a favicon for my project and added it to my head element from base.html file
 - BUG: Missing server error pages
-   - I have create custom erros pageas and integrated them in the project
+   - I have create custom erros pages and integrated them in the project
 - BUG: History order display issue
    - I fixed by ordering the Orders list based on email address, by default was after userprofile. And because the userprofile is null when the user order a product without to be logged in, then the connection between orders is lost.
 ---
@@ -510,11 +510,6 @@ But we don't stop there. Our newsletter subscription, powered by MailChimp, keep
 [Back to top ⇧](#depo-PC)
 
 ---
-
-## **Features**
-
-All of the features presented in this sections are fully responsive on all devices and screen widths.
-Please refer to [TESTING.md](/TESTING.md) for more information about responsiveness testing.
 
 ## **Future Implementations**
 
