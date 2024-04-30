@@ -241,6 +241,13 @@ def add_review(request, product_id):
     product = Product.objects.get(id=product_id)
     rating_choices = Review.RATING
 
+    if request.user.is_superuser:
+        messages.error(
+            request,
+            'You are not authorized to add Reviews!'
+        )
+        return redirect('product_detail', product_id=product_id)
+
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
