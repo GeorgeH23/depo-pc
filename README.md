@@ -53,8 +53,6 @@ Visit the live site - [depo PC](https://depo-pc-1fa940aecc2f.herokuapp.com/ "Lin
 ## **Project Overview**
 Explore a diverse catalog of top-tier computer hardware, from CPUs and GPUs to gaming peripherals. Benefit from expert reviews, detailed product descriptions, and insightful buying guides for informed decisions. Enjoy a user-friendly interface that guarantees a smooth and enjoyable shopping journey. Shop with confidence, knowing that every transaction is secure, and your personal information is handled with care.
 
-**Admin**
-
 
 **Note for testing the checkout functionality:**
 
@@ -217,7 +215,7 @@ But we don't stop there. Our newsletter subscription, powered by MailChimp, keep
         ![Home Page](readme_assets/images/home.png)
 
   - *Navbar*
-    - The navbar provides a navigation menu for users to easily access different sections of the application. It includes links to the homepage, user profile, products, categories, offers, favorites and other relevant pages. 
+    - The navbar provides a navigation menu for users to easily access different sections of the application. It includes links to the homepage, user profile, products, categories, offers, favorites and other relevant pages. A search bar is present too, the user will be able to search through the site.
 
   - *Footer:*
     - The footer is located at the bottom of the page and contains 4 sections: the address, the social media, get to know us and information hub. It provides a consistent location for secondary navigation. A rainbow solid line was added to separate the footer and the rest of the content from the pages.
@@ -238,7 +236,7 @@ But we don't stop there. Our newsletter subscription, powered by MailChimp, keep
     - The third option is with Offers. Here the user can find products that are new or products that are a good deal. Below the all-ofers categories is displayed.
         ![Products Offers](readme_assets/images/products-offers.png)
 
-    - The last tab from the nav menu is the About section. Here the user can find the the privacy, terms and conditions, contact us and about us pages. Below all pages will be displayed.
+    - The last option from the nav menu is the 'About' section. Here the user can find the the privacy, terms and conditions, contact us and about us pages. Below all pages will be displayed.
         ![About](readme_assets/images/products-about.png)
         ![T and C](readme_assets/images/t-and-c.png)
         ![Privacy](readme_assets/images/privacy.png)
@@ -319,6 +317,39 @@ But we don't stop there. Our newsletter subscription, powered by MailChimp, keep
         ![403 Error Page](readme_assets/images/403-error.png)
         ![404 Error Page](readme_assets/images/404-error.png)
         ![500 Error Page](readme_assets/images/500-error.png)
+
+  - *Error Validations:*  
+    - In the settings of the project I have add validations for password creation, at registration/login step.
+    -  Password validation
+        ![Password validation](readme_assets/images/login.png)
+    - AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+    ]
+
+   - *Form Validations:* 
+    -  Login form: validate the username/email and password
+        ![Login Form](readme_assets/images/form-val-login.png)
+    -  Registration form: validate the username/email, password
+        ![Registration Form](readme_assets/images/form-val-register.png)
+    -  Subscribe form: validate the email address
+        ![Subscribe Form](readme_assets/images/form-val-subscribe.png)
+    -  Checkout form: validate the name, email, phone no, country, city, adress and payment input
+        ![Checkout Form](readme_assets/images/form-val-checkout.png)
+    -  Add Review form: validate the comment and rating
+        ![Add Review Form](readme_assets/images/form-val-add-review.png)
+    -  Add Product form: validate the name of product, description and price
+        ![Add Product Form](readme_assets/images/form-val-prd-manag.png)
 
 
 ### **Database Design**
