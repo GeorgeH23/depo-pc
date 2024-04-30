@@ -213,60 +213,106 @@ But we don't stop there. Our newsletter subscription, powered by MailChimp, keep
   - depo PC website is structured in a user-friendly and easy to navigate way.
 
   - *Home page:*
-    - The homepage serves as the landing page for my application. A image was added on the background of the title. Was set it with css and Bootstrap. The button 'shop now' is a path to the products page.
+    - The homepage serves as the landing page for my application. A carousel slides was added as a first view. A bit down I created tiles with the top categories from the store. All was set with css and Bootstrap. The button 'shop now' is a path to the products page.
         ![Home Page](readme_assets/images/home.png)
 
   - *Navbar*
-    - The navbar provides a navigation menu for users to easily access different sections of the application. It includes links to the homepage, user profile, products, categories, offers and other relevant pages. 
+    - The navbar provides a navigation menu for users to easily access different sections of the application. It includes links to the homepage, user profile, products, categories, offers, favorites and other relevant pages. 
 
   - *Footer:*
-    - The footer is located at the bottom of the page and contains 4 sections: the address, the social media, get to know us and information hub. It provides a consistent location for secondary navigation.
-        ![Footer and Navbar Page](readme_assets/images/nav-footer.png)
+    - The footer is located at the bottom of the page and contains 4 sections: the address, the social media, get to know us and information hub. It provides a consistent location for secondary navigation. A rainbow solid line was added to separate the footer and the rest of the content from the pages.
+        ![Footer and Navbar Page](readme_assets/images/footer.png)
+
+  - *Products page*
+    - Includ all the categories, subcategories and sorting options. A list with all products from the shop are available here. In the left corner we can see how many products are in the list. On the right is a dropdown that give us the chance to sort the produc list. Multiple filters available.
+    - If you are logged in the app you are able to add/remove products to/from the Favorites page by pressing the heart located on each product card.
+    - If you are not logged, the heart will not be displayed so the functionality will not be available.
+        ![Products Page](readme_assets/images/products.png)
+    
+    - If we are going through the nav menu, we can choose to see the products sorted: by-price, by-rating, by-category and all-products. The option choosed to be displayed on the image from below is by-price one.
+        ![Products Sort](readme_assets/images/products-sort.png)
+   
+    - The next option is Categories. Here we can see all the categories that are available. This 'filter' will sort the products from the stor base on the type of it. In the example from below, the 'Games' category was choosed.
+        ![Products Categories](readme_assets/images/products-categories.png)
+
+    - The third option is with Offers. Here the user can find products that are new or products that are a good deal. Below the all-ofers categories is displayed.
+        ![Products Offers](readme_assets/images/products-offers.png)
+
+    - The last tab from the nav menu is the About section. Here the user can find the the privacy, terms and conditions, contact us and about us pages. Below all pages will be displayed.
+        ![About](readme_assets/images/products-about.png)
+        ![T and C](readme_assets/images/t-and-c.png)
+        ![Privacy](readme_assets/images/privacy.png)
+
+      - The Contact form will send a copy email with the message that the user have sent via Contact Us form.
+        ![Contact Us](readme_assets/images/contact-us.png)
+        ![Contact Us Email](readme_assets/images/contact-us-email.png)
+
+  - *Product Details page*
+    - Each product can bee seen closer. Details of the product are displayed. 
+    - The posibility of adding in the cart the quantity that the user whant to buy.
+    - The posibility of going back to the products page.
+    - The posibility of adding the product into Favorites page, or remove it from it.
+        ![Products Details Page](readme_assets/images/product-details.png)
+
+    - The posibility of adding reviews on the product. A modal will open and will let the user to write the review.
+        ![Products Details Review Modal](readme_assets/images/product-modal.png)
+    - The user is able to add/edit/delete his own review. the review off other users will not have an edit/delete option.
+        ![Products Details Review Add Modal](readme_assets/images/product-review-add.png)
+        ![Products Details Review Edit Modal](readme_assets/images/product-review-edit.png)
+        ![Products Details Review Delete Modal](readme_assets/images/product-review-delete.png)
+    - The review pagination. The user can go through the reviews, page by page or go directly to the last one and back to first after that.
+        ![Products Review Paginator](readme_assets/images/product-review-paginator.png)
+    - The admin will not be able to add reviews, the button will be hiden, but is able to delete the all reviews of all other users.
+        ![Products Review Section](readme_assets/images/admin-product-review.png)
+
+  - *Favorites page*
+    - The Favorites page help the user to see an overview of the products that may be interested.
+    - The user is able to remove the product from the list or can add it into the cart.
+    - On the bottom of the page we have the tiles with categories, to make the user to spend more time on the site.
+        ![Favorites Page](readme_assets/images/favorites.png)
+
+  - *Cart page*
+    - Shopping cart list is available here. The user can modify the quantity of the product without to go back to the product details. Or is able to remove it from the cart.
+    - On the bottom of the shopping cart the total is displyed and you have 2 options: to finish and pay or to go back to the site store.
+        ![Cart Page](readme_assets/images/cart.png)
+
+  - *Checkout page*
+    - If the user choose to pay, the next step is the checkout form, where the user add all need it details.
+        ![Checkout Page](readme_assets/images/checkout.png)
+
+  - *Checkout Success page*
+    - The order has been placed, a thank you page will next, where the user will be informed that a copy of the order was sent to the email. A summary of the order is displayed and the posibility to see the Products that are on Deals category.
+        ![Checkout Success Page](readme_assets/images/checkout-success.png)
+        ![Email Order](readme_assets/images/email-order.png)
 
   - *Registerig, logging in/out:*  
     - First time/unregistered user can successfully make a purchase without registering.
-    - The login and registration pages contain a all auth form.
-        ![Login/Register/Logout Page](readme_assets/images/signin.png)
+    - The login and registration pages contain an allauth form.
+        ![Login Page](readme_assets/images/login.png)
+        ![Logout Page](readme_assets/images/logout.png)
+        ![Register Page](readme_assets/images/register.png)
+        ![Register Verify Page](readme_assets/images/register-verify.png)
+        ![Register Email Link Page](readme_assets/images/resister-verify-email-link.png)
+        ![Register Confirmation Page](readme_assets/images/register-verify-confirmation.png)
 
-  - *Product page*
-    - Includ all the categories, subcategories and sorting options. A list with all products from the shop are available here. In the left corner we can see how many products are in the list. On the right is a dropdown that give us the chance to sort the produc list. Multiple filters available.
-        ![Products Page](readme_assets/images/products.png)
+  - *Profile:*  
+    - On the profile page the user is able to see an order history for his orders, the ones placed logged in or not. Based on emails all the history is displayed.
+    - The last details that the user has wrote into the order will be autofiled in the form. Also is the option of updating the details.
+        ![Profile Page](readme_assets/images/profile.png)
+    - The user is able to open each order and see the details about it.
+        ![Order History Page](readme_assets/images/profile-history-order.png)
 
+  - *Product Management:*  
+    - The admin is able to add new products to the site. 
+    - Is able to Edit/Delete products from the site
+        ![Add Product Page](readme_assets/images/admin-product-add.png)
+        ![Edit/Delete Action](readme_assets/images/admin-product-actions.png)
 
-  - *Product detail page:*
-    - This page shows the details of a product. The image, the description and all the info that are related to the project.
-    - you can increase or decrease the quantity of a product and at it to the shopping cart.
-        ![Product Details Page](readme_assets/images/product_details.png)
+  - *Subscription:*  
+    - The user is able to subscribe to our site.
+        ![Subscribe form Page](readme_assets/images/subscribe.png)
+        ![Dashboard MailChimp](readme_assets/images/subscribe-chimpmail.png)
 
-  - *Cart page*
-    - Consists in a list of the products that was added to the shopping cart.
-    - Some important details about the product can be seen.
-    - The price per each product.
-    - You are able to change the quantity, when press increase or decrease the subtotal automatically changes.
-    - A remove option is available if you want to delete the product from the cart.
-    - Go to checkout page when you want to pay.
-        ![Cart Shopping Page](readme_assets/images/cart.png)
-
-  - *Checkout page*
-    - Checkout page consists in a form and an order summary.
-    - Fill in the fields, pay, wait your order :).
-        ![Checkout Page](readme_assets/images/checkout.png)
-
-  - *Order Summary page*
-    - After the order is submited, a summary of the shopping cart is displayed.
-        ![Order Summary Page](readme_assets/images/order-summary.png)
-
-    - If the user login in the account, on his profile page is able to see the order history.
-        ![Order Summary Page](readme_assets/images/order-summary-login.png)
-
-  - *About, Contact pages*
-        ![About Page](readme_assets/images/about.png)
-        ![Contact Page](readme_assets/images/contact.png)
-
-  - *Error pages*
-    - Two error pages are supported, 404 (page not found) and 500 (internal server error), both with buttons that guide the user back to the home page. 
-
-  - *Policy and Terms Pages*
 
 ### **Database Design**
 
