@@ -313,6 +313,13 @@ But we don't stop there. Our newsletter subscription, powered by MailChimp, keep
         ![Subscribe form Page](readme_assets/images/subscribe.png)
         ![Dashboard MailChimp](readme_assets/images/subscribe-chimpmail.png)
 
+  - *Error Handle:*  
+    - Custom errors
+        ![400 Error Page](readme_assets/images/400-error.png)
+        ![403 Error Page](readme_assets/images/403-error.png)
+        ![404 Error Page](readme_assets/images/404-error.png)
+        ![500 Error Page](readme_assets/images/500-error.png)
+
 
 ### **Database Design**
 
@@ -407,7 +414,7 @@ But we don't stop there. Our newsletter subscription, powered by MailChimp, keep
 - EPIC: Home Page and Navigation epic should-have
 - EPIC: Contact Page epic should-have
 - EPIC: User Authentication epic should-have
-- EPIC: Wishlist could-have epic
+- EPIC: Favorites list could-have epic
 
 **Stories**
 - USER STORY: Delete Product By Admin must-have user story
@@ -428,12 +435,22 @@ But we don't stop there. Our newsletter subscription, powered by MailChimp, keep
 - USER STORY: Create Contact Page should-have user story
 - USER STORY: User Login Page should-have user story
 - USER STORY: User Registration should-have user story
-- USER STORY: Wishlist Page could-have user story
-- USER STORY: Remove Products from the Wishlist could-have user story
-- USER STORY: Add Products to the Wishlist could-have user story
-- USER STORY: Order Confirmation could-have user story
+- USER STORY: Favorites Page must-have user story
+- USER STORY: Remove Products from the Favorite list must-have user story
+- USER STORY: Add Products to the Favorites list must-have user story
+- USER STORY: Order Confirmation must-have user story
 - USER STORY: Project Set Up must-have user story
+- USER STORY: Add Paginator for Review section should-have user story
+- USER STORY: Edit/Delete the own review should-have user story
+- USER STORY: Add Review section should-have user story
 
+**Bugs**
+- BUG: Navigation not working for 'ABOUT' section
+- BUG: Emails not working
+- BUG: User with empty list of favorites
+- BUG: Missing favicon
+- BUG: Missing server error pages
+- BUG: History order display issue
 ---
 
 [Back to top ⇧](#depo-PC)
